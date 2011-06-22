@@ -12,6 +12,6 @@
     <meta name="layout" content="main" />
   </head>
   <body>
-    <h1>Aca vamos a ir agregando una breve descripción de las lesiones</h1>
+      Lala
   </body>
 </html>

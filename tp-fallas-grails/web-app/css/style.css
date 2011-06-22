@@ -11,7 +11,7 @@ html, .main {
 	margin:0;
 }
 .main {
-	background:#fff url(images/header_bg.jpg) repeat-x center 87px;
+	background:#fff url(../images/dr/header_bg.jpg) repeat-x center 87px;
 }
 .clr {
 	clear:both;
@@ -109,7 +109,7 @@ a.com span {
 }
 .menu_nav ul li.active a, .menu_nav ul li a:hover {
 	color:#fff;
-	background:url(images/menu_a.gif) repeat-x center top;
+	background:url(../images/dr/menu_a.gif) repeat-x center top;
 }
 .content_resize {
 	margin:0 auto;
@@ -294,7 +294,7 @@ ol li .send {
 	margin:6px 0;
 	padding:0;
 	float:left;
-	background:#fff url(images/search.gif) no-repeat top left;
+	background:#fff url(../images/dr/search.gif) no-repeat top left;
 }
 #formsearch input.editbox_search {
 	margin:0;
