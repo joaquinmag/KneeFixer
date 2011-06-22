@@ -1,11 +1,11 @@
 <div class="header_resize">
   <div class="menu_nav">
     <ul>
-      <li class="active"><a href="index.html">Home</a></li>
-      <li><a href="support.html">Support</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
+      <li><g:link controller="principal" action="index">Home</g:link></li>
+      <li><g:link controller="preguntasFrecuentes" action="index">Preguntas frecuentes</g:link></li>
+      <li><g:link controller="lesiones" action="index">Lesiones</g:link></li>
+      <li><g:link controller="lesiones" action="index">Diagnóstico</g:link></li>
+      <li><g:link controller="lesiones" action="index">Acerca de KneeFixer</g:link></li>
     </ul>
   </div>
   <div class="logo">
