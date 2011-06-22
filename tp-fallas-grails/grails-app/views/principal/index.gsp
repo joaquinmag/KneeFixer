@@ -13,13 +13,12 @@
   </head>
   <body>
         <div class="article">
-          <h2><span>Template</span> License</h2>
+          <h2>Sistema experto - KneeFixer</h2>
           <div class="clr"></div>
-          <p class="infopost"><span class="date">On 11 sep 2018</span> Posted by <a href="#">Owner</a> &nbsp;|&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> &nbsp;|&nbsp; with <a href="#" class="com">Comments (<span>11</span>)</a></p>
-          <img src="../images/dr/img1.jpg" width="201" height="146" alt="" class="fl" />
-          <p>This is a free CSS website template by RocketWebsiteTemplates.com. This work is distributed under the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>, which means that you are free to use it for any personal or commercial purpose provided you credit me in the form of a link back to RocketWebsiteTemplates.com.</p>
-          <p>Aenean consequat porttitor adipiscing. Nam pellentesque justo ut tortor congue lobortis. Donec venenatis sagittis fringilla. Etiam nec libero magna, et dictum velit. Proin mauris mauris, mattis eu elementum eget, commodo in nulla. Mauris posuere venenatis pretium. Maecenas a dui sed lorem aliquam dictum. Nunc urna leo, imperdiet eu bibendum ac, pretium ac massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Quisque condimentum luctus ullamcorper.</p>
-          <p class="spec"><a href="#" class="rm">Read more &raquo;</a></p>
+          <img src="${createLinkTo(dir:'images/dr/', file:'expertos.jpg')}" width="201" height="146" alt="" class="fl" />
+          <p>Un sistema experto es un sistema basado en conocimiento cuyas prestaciones intentan emular con los expertos humanos. En otros términos, los sistemas expertos son programas de computadora que aplican conocimientos sustanciales de áreas específicas de experiencia a la solución de problemas.</p>
+          <p>KneeFixer es un sistema experto cuyo objetivo se basa en, dado una serie de síntomas que se presenten en un paciente, determinar el tipo de lesión que este puede tener. Se enfoca en las lesiones que afectan a la rodilla, debido a que el campo de lesiones en todas las partes del cuerpo es muy abarcativo. </p>
+
         </div>
   </body>
 </html>
