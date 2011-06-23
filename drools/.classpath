@@ -2,9 +2,11 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="lib" path="D:/Gustavo/Facultad/2011/Fallas I/TP/drools/lib/drools-api-5.1.1.jar"/>
-	<classpathentry kind="lib" path="D:/Gustavo/Facultad/2011/Fallas I/TP/drools/lib/drools-compiler-5.1.1.jar"/>
-	<classpathentry kind="lib" path="D:/Gustavo/Facultad/2011/Fallas I/TP/drools/lib/drools-core-5.1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Eclipse Java/plugins/junit-4.9b2.jar"/>
+	<classpathentry kind="lib" path="D:/Gustavo/Facultad/2011/Fallas I/TP/drools/lib/drools-api-5.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/Gustavo/Facultad/2011/Fallas I/TP/drools/lib/drools-core-5.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/Gustavo/Facultad/2011/Fallas I/TP/drools/lib/drools-decisiontables-5.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/Gustavo/Facultad/2011/Fallas I/TP/drools/lib/drools-jsr94-4.0.7.jar"/>
+	<classpathentry kind="lib" path="D:/Gustavo/Facultad/2011/Fallas I/TP/drools/lib/drools-compiler-5.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
