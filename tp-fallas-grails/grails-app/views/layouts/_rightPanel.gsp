@@ -7,15 +7,14 @@
   </form>
 </div>
 <div class="gadget">
-  <h2 class="star"><span>Sidebar</span> Menu</h2>
+  <h2 class="star"><span>Knee Fixer</span></h2>
   <div class="clr"></div>
   <ul class="sb_menu">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">TemplateInfo</a></li>
-    <li><a href="#">Style Demo</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#">Archives</a></li>
-    <li><a href="#">Web Templates</a></li>
+      <li><g:link controller="principal" action="index">Home</g:link></li>
+      <li><g:link controller="preguntasFrecuentes" action="index">Preguntas frecuentes</g:link></li>
+      <li><g:link controller="lesiones" action="index">Lesiones</g:link></li>
+      <li><g:link controller="lesiones" action="index">Diagnóstico</g:link></li>
+      <li><g:link controller="lesiones" action="index">Acerca de KneeFixer</g:link></li>
   </ul>
 </div>
 <div class="gadget">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <title><g:layoutTitle default="Grails" /></title>
+    <title><g:layoutTitle default="KneeFixer" /></title>
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}"/></div>
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'style.css')}"/></div>
 
