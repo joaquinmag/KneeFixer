@@ -5,8 +5,6 @@
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}"/></div>
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'style.css')}"/></div>
 
-  <g:javascript library="application"/>
-  <g:javascript library="prototype"/>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
   <script type="text/javascript" src="${createLinkTo(dir:'js/custom', file:'cufon-yui.js')}"></script>
   <script type="text/javascript" src="${createLinkTo(dir:'js/custom', file:'arial.js')}"></script>

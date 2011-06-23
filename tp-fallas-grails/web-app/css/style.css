@@ -13,6 +13,14 @@ html, .main {
 .main {
 	background:#fff url(../images/dr/header_bg.jpg) repeat-x center 87px;
 }
+
+.invisibleElement {
+    display: none
+}
+.visibleElement {
+    display: inline
+}
+
 .clr {
 	clear:both;
 	padding:0;
@@ -90,6 +98,7 @@ a.com span {
 	float:right;
 	height:29px;
 }
+
 .menu_nav ul {
 	list-style:none;
 	height:29px;
