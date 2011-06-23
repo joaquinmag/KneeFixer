@@ -144,11 +144,11 @@ public class ControladorReglas {
         
         public static void main(String [ ] args){
             ControladorReglas con = new ControladorReglas();
-            /*try {
+            try {
                 con.insertarSintoma(new Dolor(Sintoma.Valor.ALTO));
             } catch (ValorIncorrectoException ex) {
                 
-            }*/
+            }
         }
 }
 

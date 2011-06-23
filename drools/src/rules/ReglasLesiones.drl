@@ -1,11 +1,14 @@
 package rules;
-import sintomas.*;
+import sintomas.Dolor;
+import sintomas.Sintoma;
+import java.lang.System;
 
 
 rule "DolorAlto"
+no-loop true
         when
-                exists Sintoma(dolor = mismoSintoma(new Dolor(Sintoma.Valor.ALTO));
+                p:Sintoma(valor == Valor.ALTO)
         then 
                 #actions
-                System.out.println("Hola");
+               System.out.println("ACA");
 end
