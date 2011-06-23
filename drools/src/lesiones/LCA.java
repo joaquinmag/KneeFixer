@@ -4,10 +4,9 @@ import sintomas.Sintoma;
 
 public class LCA extends Lesion {
 
-	LCA(Sintoma dolor, Sintoma sonido, Sintoma zona, Sintoma rigidez,
+	public LCA(Sintoma dolor, Sintoma ruido, Sintoma zona, Sintoma rigidez,
 			Sintoma estabilidad, Sintoma inflamacion) {
-		super(dolor, sonido, zona, rigidez, estabilidad, inflamacion);
-		// TODO Auto-generated constructor stub
+		super(dolor, ruido, zona, rigidez, estabilidad, inflamacion);
 	}
 
 }

@@ -4,7 +4,7 @@ import sintomas.Sintoma;
 
 public class Lesion {
 	private Sintoma dolor;
-	private Sintoma sonido;
+	private Sintoma ruido;
 	private Sintoma zona;
 	private Sintoma rigidez;
 	private Sintoma estabilidad;
@@ -12,9 +12,9 @@ public class Lesion {
 	
 	public Lesion(){}
 	
-	public Lesion(Sintoma dolor, Sintoma sonido, Sintoma zona, Sintoma rigidez, Sintoma estabilidad, Sintoma inflamacion){
+	public Lesion(Sintoma dolor, Sintoma ruido, Sintoma zona, Sintoma rigidez, Sintoma estabilidad, Sintoma inflamacion){
 		setDolor(dolor);
-		setSonido(sonido);
+		setRuido(ruido);
 		setZona(zona);
 		setRigidez(rigidez);
 		setEstabilidad(estabilidad);
@@ -28,11 +28,11 @@ public class Lesion {
 		return dolor;
 	}
 	
-	public void setSonido(Sintoma sonido) {
-		this.sonido = sonido;
+	public void setRuido(Sintoma ruido) {
+		this.ruido = ruido;
 	}
-	public Sintoma getSonido() {
-		return sonido;
+	public Sintoma getRuido() {
+		return ruido;
 	}
 	
 	public void setZona(Sintoma zona) {
@@ -62,4 +62,9 @@ public class Lesion {
 	public Sintoma getInflamacion() {
 		return inflamacion;
 	}
+        
+        public boolean mismaLesion (Lesion otraLesion)
+        {
+           return (this.getDolor().mismoSintoma(otraLesion.getDolor()) && this.getEstabilidad().mismoSintoma((otraLesion.getEstabilidad())));
+        }
 }

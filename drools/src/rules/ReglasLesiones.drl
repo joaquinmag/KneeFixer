@@ -1,102 +1,11 @@
 package rules;
+import sintomas.*;
 
-/* Elijo que esta se dispare primero... por poner alguna nomas, ya despues el status rige */
-rule "Simetria"
-salience 100
-	when
-		p : Periodo( )
-	then
-		p.setStatus(nextStatus());
-		p.setPeriodo( nextPredictedPeriod() );
-		update( p );
+
+rule "DolorAlto"
+        when
+                exists Sintoma(dolor = mismoSintoma(new Dolor(Sintoma.Valor.ALTO));
+        then 
+                #actions
+                System.out.println("Hola");
 end
-
-rule "Claro_Oscuro"
-	when
-		p : Periodo(status == Caracteristicas.CLARO_OSCURO)
-	then
-		p.setStatus(nextStatus());
-		p.setPeriodo( nextPredictedPeriod() );
-		update( p );
-end
-
-rule "Naturalismo"
-	when
-		p : Periodo( status == Caracteristicas.NATURALISMO )
-	then
-		p.setStatus(nextStatus());
-		p.setPeriodo( nextPredictedPeriod() );
-		update( p );
-end
-
-rule "Movimiento"
-	when
-		p : Periodo( status == Caracteristicas.MOVIMIENTO )
-	then
-		p.setStatus(nextStatus());
-		p.setPeriodo( nextPredictedPeriod() );
-		update( p );
-end
-
-rule "Robustez"
-	when
-		p : Periodo( status == Caracteristicas.ROBUSTEZ )
-	then
-		p.setStatus(nextStatus());
-		p.setPeriodo( nextPredictedPeriod() );
-		update( p );
-end
-
-rule "Dramatismo"
-	when
-		p : Periodo( status == Caracteristicas.DRAMATISMO )
-	then
-		p.setStatus(nextStatus());
-		p.setPeriodo( nextPredictedPeriod() );
-		update( p );
-end
-
-/*
-rule "Helenistico"
-no-loop true
-	when
-		p : Periodo( simetria == 1, claroOscuro == 4, naturalismo == 5, movimiento == 5,
-		robustez == 5, dramatismo == 5 )
-	then
-		p.setPeriodo(Periodos.HELENISTICO);
-		update( p );
-end
-
-
-rule "Clasico"
-no-loop true
-	when
-		p : Periodo( simetria == 1, claroOscuro == 2, naturalismo == 5, movimiento == 4,
-		robustez == 2, dramatismo == 1 )
-	then
-		p.setPeriodo(Periodos.CLASICO);
-		update( p );
-end
-
-
-rule "Severo"
-no-loop true
-	when
-		p : Periodo( simetria == 2, claroOscuro == 1, naturalismo == 4, movimiento == 3,
-		robustez == 1, dramatismo == 1 )
-	then
-		p.setPeriodo(Periodos.SEVERO);
-		update( p );
-end
-
-
-rule "Arcaico"
-no-loop true
-	when
-		p : Periodo( simetria == 5, claroOscuro == 1, naturalismo == 1, movimiento == 1,
-		robustez == 1, dramatismo == 1 )
-	then
-		p.setPeriodo(Periodos.ARCAICO);
-		update( p );
-end
-*/

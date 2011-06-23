@@ -16,7 +16,9 @@ public abstract class Sintoma {
 		ANTERIOR,
 		POSTERIOR,
 		AMBOS,
-		FRONTAL
+		FRONTAL,
+                NORMAL,
+                MUYBAJO
 	}
 	
 	
