@@ -164,15 +164,101 @@
       </ul>
     </div>
 
-
     <div id="tendinitis" class="invisibleElement">
       <h2>Tendinitis</h2>
-      <p>  El sufijo itis se refiere a inflamación.  Tendinitis es la inflamación de un tendón, que es una estructura fibrosa que une un músculo con un hueso.</p> 
+      <div class="clr"></div>
+      <img src="${createLinkTo(dir:'images/dr/', file:'pix5_1.jpg')}" width="170" height="150" alt="" class="fl" />
+
+      <b><ul style="padding-left: 210px;">
+          <li>¿Qué es una tendinitis?</li>
+        </ul></b>
+      <p>El sufijo itis se refiere a inflamación.  Tendinitis es la inflamación de un tendón, que es una estructura fibrosa que une un músculo con un hueso.</p>
+
+      <b><ul style="padding-left: 210px;">
+          <li>¿Qué causa una tendinitis de rodilla?</li>
+        </ul></b>
+      <p>Generalmente es causada por un esfuerzo repetitivo,  o por un movimiento brusco como una caída.    En ocasiones el desencadenante no es claro.</p>
+
+      <b><ul style="padding-left: 15px;">
+          <li>¿Qué síntomas caracterizan la tendinitis de rodilla?</li>
+        </ul></b>
+      <p>El síntoma principal de la tendinitis es el dolor, que se agrava cuando realizamos una actividad física, y mejora cuando estamos  de reposo o no salimos de la casa. </p>
+
+      <b><ul style="padding-left: 15px;">
+          <li>Cómo se tratan estas enfermedades?</li>
+        </ul></b>
+      <p>El médico debe hacer  un diagnóstico preciso, luego puede indicar reposo, antiinflamatorios y frio local. En algunos casos puede realizar infiltraciones en el sitio afectado, pero hay una excepción, el tendón rotuliano nunca se debe infiltrar porque se debilita y puede romperse.</p>
+      <p>En la mayoría de los casos el pronóstico es favorable, evoluciona satisfactoriamente en un periodo corto de tiempo.
     </div>
 
     <div id="meniscos" class="invisibleElement">
       <h2>Meniscos</h2>
-      <p></p> 
+      <div class="clr"></div>
+      <img src="${createLinkTo(dir:'images/dr/', file:'meniscos.jpg')}" width="170" height="150" alt="" class="fl" />
+
+      <b><ul style="padding-left: 210px;">
+          <li>¿Qué es una lesión de meniscos?</li>
+        </ul></b>
+
+      <p>Los meniscos son dos almohadillas de consistencia gomosa, formadas por una sustancia llamada fibrocartílago, que se sitúan entre el cartílago del hueso del fémur y el de la tibia. El menisco situado hacia fuera de la rodilla se llama menisco externo y el contrario menisco interno o medial.</p>
+      <p>Su función es amortiguar el choque entre estos cartílagos y aumentar su congruencia, ya que la forma del cartílago tibial no se corresponde exactamente a la del femoral. De esta manera se distribuyen mejor las cargas y se estabiliza de manera más eficaz la rodilla. </p>
+      <p>Los meniscos se rasgan cuando la rodilla sufre un giro violento, habitualmente porque el cuerpo se mueve respecto a la pierna fija: se bloquea un esquí, entrada de un contrario en el fútbol, levantarse bruscamente desde una posición de cuclillas, etc.</p>
+      <p>De todos los deportes destaca el fútbol como causa más frecuente de rotura de menisco.</p>
+
+      <b><ul style="padding-left: 15px;">
+          <li>¿Qué síntomas produce una rotura de menisco?</li>
+        </ul></b>
+
+      <ul style="padding-left: 30px;">
+        <li>En el momento de la rotura el paciente siente un dolor vivo y con frecuencia un chasquido. </li>
+        <li>En las horas siguientes la rodilla puede producir más líquido articular (derrame) pero es poco importante. </li>
+        <li>El síntoma más clásico y típico es el bloqueo de la rodilla: El paciente no puede estirarla completamente. Esta situación indica que la parte rota del menisco se ha desplazado hacia el centro de la rodilla y obstaculiza su movimiento. El bloqueo suele desaparecer cuando el paciente mueve su rodilla, notando (y a menudo oyendo) un clic. </li>
+        <li>Es más frecuente notar dolor en el lado de la rodilla correspondiente al menisco roto cuando el paciente realiza giros de la rodilla. </li>
+      </ul>
+      
+      <p></p>
+      <b><ul style="padding-left: 15px;">
+          <li>¿Qué hace el médico ante la sospecha de una rotura de menisco?</li>
+        </ul></b>
+
+      <p>Se debe realizar una exploración completa de ambas rodillas para comparar los hallazgos y descartar otras lesiones asociadas.</p>
+      <p>Para detectar la lesión de menisco específicamente, el médico palpa la zona de la rodilla correspondiente a los meniscos (la llamada interlínea articular) y seguidamente realiza los test meniscales: flexiona la rodilla, aplica presión y gira la pierna:</p>
+      <p>La pierna gira hacia adentro y duele la parte de fuera de la rodilla: el menisco externo puede estar roto.</p>
+      <p>La pierna gira hacia afuera y duele la parte de adentro de la rodilla: el menisco interno puede estar roto. </p>
+
+      <b><ul style="padding-left: 15px;">
+          <li>El tratamiento inicial se basa en cuatro medidas:</li>
+        </ul></b>
+
+      <ul style="padding-left: 30px;">
+        <li>Frío local, efectivo durante las primeras 72 horas. Se utiliza la típica bolsa con cubitos de hielo o el cold pack (bolsa estanca con un gel en su interior que se enfría en la nevera); en caso de carecerse de estos medios nos puede servir una bolsa de guisantes congelados o de otro tipo de verdura. Nunca en contracto directo con la piel para evitar quemaduras por congelación. Lo habitual es mantenerlo unos 20 minutos cada hora cuidando de no sobrepasar las tres horas totales por día. </li>
+        <li>Reposo mínimo de 24 a 48 horas, para evitar aumentar la lesión. </li>
+        <li>Vendaje compresivo elástico, no rígido para no cortar la circulación de la sangre. </li>
+        <li>El evación de la extremidad durante varios días. Si el paciente está tumbado, se coloca una almohada bajo la pierna, de forma que el pie esté más alto que el corazón. Si el paciente se sienta, apoyará la pierna sobre una silla. </li>
+      </ul>
+
+      <p>Un bloqueo de rodilla que no cede a las maniobras específicas de movilización realizadas por el médico, se debe tratar mediante artroscopia, que permite devolver el fragmento roto a su sitio y valorar si se extirpa o se sutura.</p>
+      <p>El resto de las lesiones de menisco se suelen tratar mediante un programa de ejercicios que potencie la musculatura, lo que descarga al menisco de esfuerzos.</p>
+      <p>Si el dolor persiste o los bloqueos son muy frecuentes se debe practicar una artroscopia.</p>
+
+      <b><ul style="padding-left: 15px;">
+          <li>Artroscopia</li>
+        </ul></b>
+
+      <ul style="padding-left: 30px;">
+        <li>Las roturas más periféricas cicatrizan mejor porque llega más sangre a la zona. Por tanto se suelen reparar suturando el menisco, sobre todo en los pacientes más jóvenes. </li>
+        <li>Las roturas centrales afectan a la zona del menisco que no recibe sangre, por lo que no cicatrizan: se debe extirpar el fragmento roto.</li>
+      </ul>
+
+      <p>Si se extirpa el menisco, el paciente puede apoyar ese mismo día la extremidad y andar sin muletas, realizando ejercicios de potencia muscular y de movilidad de rodilla. Entre 5 y 6 semanas después puede retornar al trabajo o al deporte.</p>
+      <p>Si se sutura el menisco (cosiéndolo o mediante unas grapas especiales) una de las pautas del tratamiento después de operar es la siguiente: </p>
+
+      <ul style="padding-left: 30px;">
+        <li>Se suele inmovilizar la rodilla en flexión ligera durante unas tres semanas. </li>
+        <li>Luego se empieza a mover y comienza apoyo con muletas progresivo desde la cuarta a la octava semana. </li>
+        <li>A la octava semana se comienza bicicleta estática y medias cuclillas. </li>
+        <li>Al quinto mes se comienza carrera continua y al noveno mes puede volver al deporte.           </li>
+      </ul>
     </div>
 
   </body>
