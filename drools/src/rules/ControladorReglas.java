@@ -51,7 +51,7 @@ public class ControladorReglas {
 		
         KnowledgeBuilder kbuilder =  KnowledgeBuilderFactory.newKnowledgeBuilder();
         System.out.println("ACA");
-        kbuilder.add(ResourceFactory.newClassPathResource("ReglasPeriodos.drl"), ResourceType.DRL);
+        kbuilder.add(ResourceFactory.newClassPathResource("rules/ReglasLesiones.drl"), ResourceType.DRL);
         KnowledgeBuilderErrors errors = kbuilder.getErrors();
         if (errors.size() > 0) {
             for (KnowledgeBuilderError error: errors) {
