@@ -15,8 +15,9 @@
     <div class="question">
       <div class="">
         <h3>Preguntas</h3>
-        <g:form action="save" enctype="multipart/form-data">
+        <g:form action="nextQuestion" enctype="multipart/form-data">
           <div class="diagnosisQuestions">
+            <g:hiddenField name="idPregunta" value="${idPregunta}" /> 
             <p>¿Qué grado de rigidez se observa en la rodilla del paciente? Alto</p>
             <p>${pregunta}</p>
             <p style="text-align: left; padding-left: 150px;">
@@ -51,5 +52,13 @@
       </div>
     </div>
 
+    <div style="clear:both;">
+      <h2>Respuestas actuales</h2>
+      <ol>
+        <g:each in="${respuestasActuales}" status="i" var="respuesta">
+          <li>${respuesta}</li>
+        </g:each>
+      </ol>
+    </div>
   </body>
 </html>

@@ -2,6 +2,8 @@ package com.dr.control
 
 class DiagnosticoController {
 
+    String keyRespuestas = "respuestas"
+    
     def index = { 
         def listaPreguntas = cargarPreguntas()
         if (!params.id) {
@@ -19,8 +21,26 @@ class DiagnosticoController {
                 preguntaElegida = listaPreguntas[id-1]
                 [ pregunta : preguntaElegida.pregunta, 
                     posiblesRespuestas : preguntaElegida.posiblesRespuestas, 
-                    idPregunta : id ]
+                    idPregunta : id,
+                    respuestasActuales : session[keyRespuestas]
+                  ]
             }
+        }
+    }
+    
+    def nextQuestion = {
+        if (!params.idPregunta) {
+            render(view: "index")
+        }
+        else {
+            if (!session[keyRespuestas]) {
+                def respuestas = [:]
+                session[keyRespuestas] = respuestas
+            }
+            def respuestas = session[keyRespuestas]
+            respuestas[params.idPregunta] = params.opcion
+            session[keyRespuestas] = respuestas
+            redirect(action: "index", params: [id: Integer.parseInt(params.idPregunta,10)+1])
         }
     }
     
