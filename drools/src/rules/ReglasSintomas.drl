@@ -7,7 +7,7 @@ global Diagnostico lesion
 rule "DolorMuyAlto"
 no-loop true
         when
-               	sintoma:Dolor(valor==Sintoma.Valor.MUYALTO)
+               	sintoma:Dolor(valor==Sintoma.Valor.MUY_ALTO)
         then 
                 #actions
 				lesion.agregarNivelLesion(TipoLesion.LCAP);
@@ -110,7 +110,7 @@ end
 rule "EstabilidadMuyBajo"
 no-loop true
         when
-               	sintoma:Estabilidad(valor==Sintoma.Valor.MUYBAJO)
+               	sintoma:Estabilidad(valor==Sintoma.Valor.MUY_BAJO)
         then 
                 #actions
         		lesion.agregarNivelLesion(TipoLesion.LCAP);
@@ -162,7 +162,7 @@ end
 rule "InflamacionMuyAlto"
 no-loop true
         when
-               	sintoma:Inflamacion(valor==Sintoma.Valor.MUYALTO)
+               	sintoma:Inflamacion(valor==Sintoma.Valor.MUY_ALTO)
         then 
                 #actions
         		lesion.agregarNivelLesion(TipoLesion.LCAP);

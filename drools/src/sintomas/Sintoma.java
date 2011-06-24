@@ -11,7 +11,7 @@ public abstract class Sintoma {
 		BAJO,
 		MEDIO,
 		ALTO,
-		MUYALTO,
+		MUY_ALTO,
 		CRUJIENTE,
 		RUIDOSECO,
 		NINGUNO,
@@ -20,7 +20,7 @@ public abstract class Sintoma {
 		AMBOS,
 		FRONTAL,
         NORMAL,
-        MUYBAJO,
+        MUY_BAJO,
         NO_DETERMINADO;
 	}
 	

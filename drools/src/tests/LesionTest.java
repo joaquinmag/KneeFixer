@@ -62,13 +62,13 @@ public class LesionTest{
 		
 		List<Sintoma> sintomas = new ArrayList<Sintoma>();
 		
-		sintomas.add(new Dolor(Sintoma.Valor.MUYALTO));
+		sintomas.add(new Dolor(Sintoma.Valor.MUY_ALTO));
 		sintomas.add(new Rigidez(Sintoma.Valor.BAJO));
-		sintomas.add(new Estabilidad(Sintoma.Valor.MUYBAJO));
+		sintomas.add(new Estabilidad(Sintoma.Valor.MUY_BAJO));
 		sintomas.add(new Zona(Sintoma.Valor.AMBOS));
 		sintomas.add(new Ruido(Sintoma.Valor.CRUJIENTE));
 		sintomas.add(new Inflamacion(Sintoma.Valor.ALTO));
-		sintomas.add(new Inflamacion(Sintoma.Valor.MUYALTO));
+		sintomas.add(new Inflamacion(Sintoma.Valor.MUY_ALTO));
 		
 		ControladorReglas reglas = new ControladorReglas(sintomas);
 		List<TipoLesion> lesiones = reglas.ejecutar();
