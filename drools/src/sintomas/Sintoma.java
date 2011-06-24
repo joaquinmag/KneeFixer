@@ -4,6 +4,7 @@ public abstract class Sintoma {
 	public Sintoma() throws ValorIncorrectoException{}
 	
 	private Valor valor;
+	public boolean v = false;
 	
 	public enum Valor{
 		BAJO,

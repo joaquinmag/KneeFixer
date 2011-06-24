@@ -32,11 +32,11 @@ public class ControladorReglas {
 	private KnowledgeRuntimeLogger inicializarReglas(){
 		try {
 			KnowledgeBase kbase = readKnowledgeBase();
-			StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
+			ksession = kbase.newStatefulKnowledgeSession();
 			KnowledgeRuntimeLogger logger = KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, "test");
 
 			inicializarLesiones();
-            ksession.setGlobal("lesiones", lesionesPosibles);
+            //ksession.setGlobal("lesiones", lesionesPosibles);
             return logger;
 
 		} 
@@ -86,7 +86,7 @@ public class ControladorReglas {
 
 	
 	public void fireAllRules() {
-            ksession.fireAllRules();
+		ksession.fireAllRules();
 	}
 	
 	/*public boolean contieneRebaba(String tipo){
@@ -145,12 +145,18 @@ public class ControladorReglas {
             ControladorReglas con = new ControladorReglas();
             try {
             	KnowledgeRuntimeLogger logger = con.inicializarReglas();
-                /*con.insertarSintoma(new Dolor(Sintoma.Valor.ALTO));*/
+            	Sintoma dolor = new Dolor(Sintoma.Valor.ALTO);
+                con.insertarSintoma(dolor);
+                con.fireAllRules();
+                System.out.println(dolor.v);
                 logger.close();
-            } //catch (ValorIncorrectoException ex) {
+            } catch (ValorIncorrectoException ex) {
                 
-            //}
-            catch (NullPointerException ex){}
+            }
+            catch (NullPointerException ex){
+            	System.out.println("A");
+            	
+            }
             
         }
 }
