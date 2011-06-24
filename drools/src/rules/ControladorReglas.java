@@ -1,14 +1,9 @@
 package rules;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import lesiones.*;
 import sintomas.*;
+
 
 
 import org.drools.KnowledgeBase;
@@ -32,6 +27,9 @@ public class ControladorReglas {
 	StatefulKnowledgeSession ksession;
 	
 	public ControladorReglas(){
+	}
+	
+	private KnowledgeRuntimeLogger inicializarReglas(){
 		try {
 			KnowledgeBase kbase = readKnowledgeBase();
 			StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
@@ -39,10 +37,12 @@ public class ControladorReglas {
 
 			inicializarLesiones();
             ksession.setGlobal("lesiones", lesionesPosibles);
+            return logger;
 
 		} 
         catch (Throwable t) {
         	t.printStackTrace();
+        	return null;
 		}
 	}
 
@@ -50,7 +50,6 @@ public class ControladorReglas {
 		
 		
         KnowledgeBuilder kbuilder =  KnowledgeBuilderFactory.newKnowledgeBuilder();
-        System.out.println("ACA");
         kbuilder.add(ResourceFactory.newClassPathResource("rules/ReglasLesiones.drl"), ResourceType.DRL);
         KnowledgeBuilderErrors errors = kbuilder.getErrors();
         if (errors.size() > 0) {
@@ -145,10 +144,14 @@ public class ControladorReglas {
         public static void main(String [ ] args){
             ControladorReglas con = new ControladorReglas();
             try {
-                con.insertarSintoma(new Dolor(Sintoma.Valor.ALTO));
-            } catch (ValorIncorrectoException ex) {
+            	KnowledgeRuntimeLogger logger = con.inicializarReglas();
+                /*con.insertarSintoma(new Dolor(Sintoma.Valor.ALTO));*/
+                logger.close();
+            } //catch (ValorIncorrectoException ex) {
                 
-            }
+            //}
+            catch (NullPointerException ex){}
+            
         }
 }
 

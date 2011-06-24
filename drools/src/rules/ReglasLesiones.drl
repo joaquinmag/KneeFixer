@@ -7,7 +7,7 @@ import java.lang.System;
 rule "DolorAlto"
 no-loop true
         when
-                p:Sintoma(valor == Valor.ALTO)
+                p:Dolor(valor == Sintoma.Valor.ALTO)
         then 
                 #actions
                System.out.println("ACA");
