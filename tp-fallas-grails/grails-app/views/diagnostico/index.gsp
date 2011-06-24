@@ -10,7 +10,6 @@
     <script type="text/javascript">
       document.getElementById('diagnostico_li').className = 'active'
     </script>
-
     <h2>Diagnóstico</h2>
 
     <div class="question">
@@ -19,11 +18,11 @@
         <div class="diagnosisQuestions">
           <p>¿Qué grado de rigidez se observa en la rodilla del paciente? Alto</p>
 
-          <p>¿Qué grado de dolor se observa en el paciente?</p>
+          <p>${pregunta}</p>
           <p style="text-align: left; padding-left: 150px;">
-            <input type="radio" name="dolor" value="alto">    Alto<br>
-            <input type="radio" name="dolor" value="medio">    Medio<br>
-            <input type="radio" name="dolor" value="bajo">    Bajo</input>
+            <g:each in="${posiblesRespuestas}" status="i" var="productInstance">
+            <input type="radio" name="dolor" value="${posiblesRespuestas[i]}">    ${posiblesRespuestas[i]}</input>
+            </g:each>
           </p>
         </div>
         <div class="menu_nav">
