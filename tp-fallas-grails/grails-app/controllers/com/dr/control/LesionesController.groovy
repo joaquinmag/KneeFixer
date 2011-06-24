@@ -2,5 +2,7 @@ package com.dr.control
 
 class LesionesController {
 
-    def index = { }
+    def index = {
+        print('session: ' + session['cosas'])
+    }
 }

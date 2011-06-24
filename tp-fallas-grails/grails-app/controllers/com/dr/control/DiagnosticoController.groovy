@@ -2,5 +2,7 @@ package com.dr.control
 
 class DiagnosticoController {
 
-    def index = { }
+    def index = { 
+        session['cosas'] = 'lala'
+    }
 }
