@@ -20,7 +20,8 @@ public abstract class Sintoma {
 		AMBOS,
 		FRONTAL,
         NORMAL,
-        MUYBAJO
+        MUYBAJO,
+        NO_DETERMINADO;
 	}
 	
 	@Override

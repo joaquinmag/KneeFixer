@@ -9,27 +9,27 @@ import sintomas.Sintoma;
 
 public class ControladorReglas {
 
+	private List<Sintoma> sintomas;
+	
 	public ControladorReglas(List<Sintoma> sintomas) {
-		Diagnostico lesion = ejecutarReglasSintomas(sintomas);
-		System.out.println(lesion.getLesiones());
+		this.sintomas = sintomas;
 	}
 
-	private Diagnostico ejecutarReglasSintomas(List<Sintoma> sintomas) {
+	/**
+	 * Analiza las reglas y determina las posibles lesiones.
+	 */
+	public List<TipoLesion> ejecutar(){
 		String path = "rules/ReglasSintomas.drl";
 		Drools drools = new Drools(path);
 		
-		Diagnostico lesion = new Diagnostico();
-		drools.setVariableGlobal("lesion", lesion);
+		Diagnostico diagnostico = new Diagnostico();
+		drools.setVariableGlobal("lesion", diagnostico);
 
 		for (Sintoma sintoma : sintomas)
 			drools.insertarEnBase(sintoma);
 		
 		drools.analizarReglas();
 		
-		return lesion;
-	}
-		
-	public TipoLesion getPosiblesLesiones(){
-		return null;
+		return diagnostico.getPosibleLesiones();
 	}
 }

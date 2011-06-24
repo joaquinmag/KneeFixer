@@ -11,6 +11,13 @@ no-loop true
         then 
                 #actions
 				lesion.agregarNivelLesion(TipoLesion.LCAP);
+				
+				lesion.quitarLesion(TipoLesion.LCA);
+        		lesion.quitarLesion(TipoLesion.LCP);
+        		lesion.quitarLesion(TipoLesion.MENISCOS);
+        		lesion.quitarLesion(TipoLesion.TENDINITIS);
+        		lesion.quitarLesion(TipoLesion.ARTRITIS);
+				
 				lesion.setDolor(sintoma);
 end
 
@@ -24,6 +31,10 @@ no-loop true
         		lesion.agregarNivelLesion(TipoLesion.LCP);
         		lesion.agregarNivelLesion(TipoLesion.MENISCOS);
         		lesion.agregarNivelLesion(TipoLesion.TENDINITIS);
+        		
+        		lesion.quitarLesion(TipoLesion.LCAP);
+        		lesion.quitarLesion(TipoLesion.ARTRITIS);
+        		
         		lesion.setDolor(sintoma);
 end
 
@@ -35,6 +46,12 @@ no-loop true
                 #actions
         		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
         		lesion.agregarNivelLesion(TipoLesion.TENDINITIS);
+        		
+        		lesion.quitarLesion(TipoLesion.LCA);
+        		lesion.quitarLesion(TipoLesion.LCP);
+        		lesion.quitarLesion(TipoLesion.MENISCOS);
+        		lesion.quitarLesion(TipoLesion.LCAP);
+        		
         		lesion.setDolor(sintoma);
 end
 
@@ -47,6 +64,11 @@ no-loop true
         		lesion.agregarNivelLesion(TipoLesion.LCA);
         		lesion.agregarNivelLesion(TipoLesion.LCP);
         		lesion.agregarNivelLesion(TipoLesion.LCAP);
+        		
+        		lesion.quitarLesion(TipoLesion.MENISCOS);
+        		lesion.quitarLesion(TipoLesion.TENDINITIS);
+        		lesion.quitarLesion(TipoLesion.ARTRITIS);
+        		
         		lesion.setRuido(sintoma);
 end
 
@@ -57,6 +79,13 @@ no-loop true
         then 
                 #actions
         		lesion.agregarNivelLesion(TipoLesion.MENISCOS);
+        		
+        		lesion.quitarLesion(TipoLesion.LCA);
+        		lesion.quitarLesion(TipoLesion.LCP);
+        		lesion.quitarLesion(TipoLesion.TENDINITIS);
+        		lesion.quitarLesion(TipoLesion.LCAP);
+        		lesion.quitarLesion(TipoLesion.ARTRITIS);
+        		
         		lesion.setRuido(sintoma);
 end
 
@@ -68,6 +97,12 @@ no-loop true
                 #actions
         		lesion.agregarNivelLesion(TipoLesion.TENDINITIS);
         		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
+        		
+        		lesion.quitarLesion(TipoLesion.LCA);
+        		lesion.quitarLesion(TipoLesion.LCP);
+        		lesion.quitarLesion(TipoLesion.MENISCOS);
+        		lesion.quitarLesion(TipoLesion.LCAP);
+        		
         		lesion.setRuido(sintoma);
 end
 
@@ -79,6 +114,13 @@ no-loop true
         then 
                 #actions
         		lesion.agregarNivelLesion(TipoLesion.LCAP);
+        		
+        		lesion.quitarLesion(TipoLesion.LCA);
+        		lesion.quitarLesion(TipoLesion.LCP);
+        		lesion.quitarLesion(TipoLesion.MENISCOS);
+        		lesion.quitarLesion(TipoLesion.TENDINITIS);
+        		lesion.quitarLesion(TipoLesion.ARTRITIS);
+        		
         		lesion.setEstabilidad(sintoma);
 end
 
@@ -91,6 +133,11 @@ no-loop true
         		lesion.agregarNivelLesion(TipoLesion.LCA);
         		lesion.agregarNivelLesion(TipoLesion.LCP);
         		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
+        		
+        		lesion.quitarLesion(TipoLesion.MENISCOS);
+        		lesion.quitarLesion(TipoLesion.TENDINITIS);
+        		lesion.quitarLesion(TipoLesion.LCAP);
+        		
         		lesion.setEstabilidad(sintoma);
 end
 
@@ -103,6 +150,12 @@ no-loop true
                 #actions
         		lesion.agregarNivelLesion(TipoLesion.MENISCOS);
         		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
+        		lesion.agregarNivelLesion(TipoLesion.TENDINITIS);
+        		
+        		lesion.quitarLesion(TipoLesion.LCA);
+        		lesion.quitarLesion(TipoLesion.LCP);
+        		lesion.quitarLesion(TipoLesion.LCAP);
+        		
         		lesion.setEstabilidad(sintoma);
 end
 
@@ -113,6 +166,13 @@ no-loop true
         then 
                 #actions
         		lesion.agregarNivelLesion(TipoLesion.LCAP);
+        		
+        		lesion.quitarLesion(TipoLesion.LCA);
+        		lesion.quitarLesion(TipoLesion.LCP);
+        		lesion.quitarLesion(TipoLesion.MENISCOS);
+        		lesion.quitarLesion(TipoLesion.TENDINITIS);
+        		lesion.quitarLesion(TipoLesion.ARTRITIS);
+        		
         		lesion.setInflamacion(sintoma);
 end
 
@@ -126,6 +186,10 @@ no-loop true
         		lesion.agregarNivelLesion(TipoLesion.LCP);
         		lesion.agregarNivelLesion(TipoLesion.LCAP);
         		lesion.agregarNivelLesion(TipoLesion.TENDINITIS);
+        		
+        		lesion.quitarLesion(TipoLesion.MENISCOS);
+        		lesion.quitarLesion(TipoLesion.ARTRITIS);
+        		
         		lesion.setInflamacion(sintoma);
 end
 
@@ -137,6 +201,12 @@ no-loop true
                 #actions
         		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
         		lesion.agregarNivelLesion(TipoLesion.MENISCOS);
+        		lesion.agregarNivelLesion(TipoLesion.TENDINITIS);
+        		
+        		lesion.quitarLesion(TipoLesion.LCA);
+        		lesion.quitarLesion(TipoLesion.LCP);
+        		lesion.quitarLesion(TipoLesion.LCAP);
+        		
         		lesion.setInflamacion(sintoma);
 end
 
@@ -149,6 +219,11 @@ no-loop true
         		lesion.agregarNivelLesion(TipoLesion.MENISCOS);
         		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
         		lesion.agregarNivelLesion(TipoLesion.TENDINITIS);
+        		
+        		lesion.quitarLesion(TipoLesion.LCA);
+        		lesion.quitarLesion(TipoLesion.LCP);
+        		lesion.quitarLesion(TipoLesion.LCAP);
+        		
         		lesion.setRigidez(sintoma);
 end
 
@@ -161,6 +236,11 @@ no-loop true
         		lesion.agregarNivelLesion(TipoLesion.LCA);
         		lesion.agregarNivelLesion(TipoLesion.LCP);
         		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
+        		
+        		lesion.quitarLesion(TipoLesion.MENISCOS);
+        		lesion.quitarLesion(TipoLesion.TENDINITIS);
+        		lesion.quitarLesion(TipoLesion.LCAP);
+        		
         		lesion.setRigidez(sintoma);
 end
 
@@ -171,6 +251,13 @@ no-loop true
         then 
                 #actions
         		lesion.agregarNivelLesion(TipoLesion.LCAP);
+        		
+        		lesion.quitarLesion(TipoLesion.LCA);
+        		lesion.quitarLesion(TipoLesion.LCP);
+        		lesion.quitarLesion(TipoLesion.MENISCOS);
+        		lesion.quitarLesion(TipoLesion.TENDINITIS);
+        		lesion.quitarLesion(TipoLesion.ARTRITIS);
+        		
         		lesion.setRigidez(sintoma);
 end
 
@@ -181,6 +268,13 @@ no-loop true
         then 
                 #actions
         		lesion.agregarNivelLesion(TipoLesion.LCA);
+        		
+        		lesion.quitarLesion(TipoLesion.LCP);
+        		lesion.quitarLesion(TipoLesion.MENISCOS);
+        		lesion.quitarLesion(TipoLesion.TENDINITIS);
+        		lesion.quitarLesion(TipoLesion.LCAP);
+        		lesion.quitarLesion(TipoLesion.ARTRITIS);
+        		
         		lesion.setZona(sintoma);
 end
 
@@ -191,6 +285,13 @@ no-loop true
         then 
                 #actions
         		lesion.agregarNivelLesion(TipoLesion.LCP);
+        		
+        		lesion.quitarLesion(TipoLesion.LCA);
+        		lesion.quitarLesion(TipoLesion.MENISCOS);
+        		lesion.quitarLesion(TipoLesion.TENDINITIS);
+        		lesion.quitarLesion(TipoLesion.LCAP);
+        		lesion.quitarLesion(TipoLesion.ARTRITIS);
+        		
         		lesion.setZona(sintoma);
 end
 
@@ -203,6 +304,11 @@ no-loop true
         		lesion.agregarNivelLesion(TipoLesion.LCAP);
         		lesion.agregarNivelLesion(TipoLesion.MENISCOS);
         		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
+        		
+        		lesion.quitarLesion(TipoLesion.LCA);
+        		lesion.quitarLesion(TipoLesion.LCP);
+        		lesion.quitarLesion(TipoLesion.TENDINITIS);
+        		
         		lesion.setZona(sintoma);
 end
 
@@ -213,5 +319,12 @@ no-loop true
         then 
                 #actions
         		lesion.agregarNivelLesion(TipoLesion.TENDINITIS);
+        		
+        		lesion.quitarLesion(TipoLesion.LCA);
+        		lesion.quitarLesion(TipoLesion.LCP);
+        		lesion.quitarLesion(TipoLesion.MENISCOS);
+        		lesion.quitarLesion(TipoLesion.LCAP);
+        		lesion.quitarLesion(TipoLesion.ARTRITIS);
+        		
         		lesion.setZona(sintoma);
 end

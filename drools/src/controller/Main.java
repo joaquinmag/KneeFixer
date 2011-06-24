@@ -26,5 +26,6 @@ public class Main {
 		sintomas.add(new Inflamacion(Sintoma.Valor.ALTO));
 		
 		ControladorReglas reglas = new ControladorReglas(sintomas);
+		System.out.println(reglas.ejecutar());		
 	}
 }

@@ -1,9 +1,10 @@
 package sintomas;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import lesiones.TipoLesion;
-
 
 public class Diagnostico {
 
@@ -13,14 +14,15 @@ public class Diagnostico {
 	private Sintoma rigidez;
 	private Sintoma estabilidad;
 	private Sintoma inflamacion;
-	
+
 	private HashMap<TipoLesion, Integer> lesiones = new HashMap<TipoLesion, Integer>();
+	private List<TipoLesion> posiblesLesiones = new ArrayList<TipoLesion>(TipoLesion.asList());
 
 	public Diagnostico() {
 	}
 
-	public Diagnostico(Sintoma dolor, Sintoma ruido, Sintoma zona, Sintoma rigidez,
-			Sintoma estabilidad, Sintoma inflamacion) {
+	public Diagnostico(Sintoma dolor, Sintoma ruido, Sintoma zona,
+			Sintoma rigidez, Sintoma estabilidad, Sintoma inflamacion) {
 
 		setDolor(dolor);
 		setRuido(ruido);
@@ -91,12 +93,21 @@ public class Diagnostico {
 	 * indicando que LCAP debe ser incrementado en uno.
 	 * 
 	 */
-	public void agregarNivelLesion(TipoLesion tipolesion) {
+	public void agregarNivelLesion(TipoLesion tipoLesion) {
 		int nuevoValor = 1;
-		
-		if (this.lesiones.containsKey(tipolesion))
-			nuevoValor = this.lesiones.get(tipolesion).intValue() + 1;
 
-		this.lesiones.put(tipolesion, nuevoValor);
+		if (this.lesiones.containsKey(tipoLesion))
+			nuevoValor = this.lesiones.get(tipoLesion).intValue() + 1;
+
+		this.lesiones.put(tipoLesion, nuevoValor);
+	}
+
+	public void quitarLesion(TipoLesion tipoLesion) {
+		if (this.posiblesLesiones.contains(tipoLesion))
+			this.posiblesLesiones.remove(tipoLesion);
+	}
+
+	public List<TipoLesion> getPosibleLesiones() {
+		return this.posiblesLesiones;
 	}
 }

@@ -1,5 +1,8 @@
 package lesiones;
 
+import java.util.Arrays;
+import java.util.List;
+
 public enum TipoLesion {
 		
 		LCA("Ligamento cruzado anterior"),
@@ -7,8 +10,7 @@ public enum TipoLesion {
 		LCAP("Ligamento cruzado anterior y posterior"),
 		TENDINITIS("Tendinitis rotuliana"),
 		MENISCOS("Ruptura de meniscos"),
-		ARTRITIS("Artritis"),
-		NO_DETERMINADA("No determinada");
+		ARTRITIS("Artritis");
 		
 		private String nombre;
 		
@@ -18,5 +20,9 @@ public enum TipoLesion {
 		
 		public String getNombre(){
 			return this.nombre;
+		}
+		
+		public static List<TipoLesion> asList(){
+			return Arrays.asList(TipoLesion.values());
 		}
 	}
