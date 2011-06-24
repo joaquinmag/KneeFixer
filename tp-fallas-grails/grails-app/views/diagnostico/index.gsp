@@ -20,8 +20,8 @@
 
           <p>${pregunta}</p>
           <p style="text-align: left; padding-left: 150px;">
-            <g:each in="${posiblesRespuestas}" status="i" var="productInstance">
-            <input type="radio" name="dolor" value="${posiblesRespuestas[i]}">    ${posiblesRespuestas[i]}</input>
+            <g:each in="${posiblesRespuestas}" status="i" var="opcion">
+            <input type="radio" name="dolor" value="${opcion}">    ${opcion}</input>
             </g:each>
           </p>
         </div>
