@@ -24,7 +24,9 @@ public class Lesion {
 	
 	private HashMap<TipoLesion,Integer> lesiones;
 	
-	public Lesion(){}
+	public Lesion(){
+		setLesiones(new HashMap<TipoLesion,Integer>());
+	}
 	
 	public Lesion(Sintoma dolor, Sintoma ruido, Sintoma zona, Sintoma rigidez, Sintoma estabilidad, Sintoma inflamacion){
 		setDolor(dolor);

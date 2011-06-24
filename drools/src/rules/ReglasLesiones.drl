@@ -6,56 +6,195 @@ import lesiones.*;
 global Lesion lesion
 
 
-rule "DolorLCA"
+rule "DolorMuyAlto"
+no-loop true
+        when
+               	sintoma:Dolor(valor==Sintoma.Valor.MUYALTO )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCAP);
+end
+
+rule "DolorAlto"
 no-loop true
         when
                	sintoma:Dolor(valor==Sintoma.Valor.ALTO )
         then 
                 #actions
         		lesion.SumarUnoHash(Lesion.TipoLesion.LCA);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCP);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.MENISCOS);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.TENDINITIS);
 end
 
-rule "RuidoLCA"
+rule "DolorMedio"
+no-loop true
+        when
+               	sintoma:Dolor(valor==Sintoma.Valor.MEDIO )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.ARTRITIS);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.TENDINITIS);
+end
+
+rule "RuidoCrujiente"
 no-loop true
         when
                	sintoma:Ruido(valor==Sintoma.Valor.CRUJIENTE )
         then 
                 #actions
         		lesion.SumarUnoHash(Lesion.TipoLesion.LCA);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCP);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCAP);
 end
 
-rule "EstabilidadLCA"
+rule "RuidoSeco"
+no-loop true
+        when
+               	sintoma:Ruido(valor==Sintoma.Valor.RUIDOSECO )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.MENISCOS);
+end
+
+rule "RuidoNinguno"
+no-loop true
+        when
+               	sintoma:Ruido(valor==Sintoma.Valor.NINGUNO )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.TENDINITIS);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.ARTRITIS);
+end
+
+
+rule "EstabilidadMuyBajo"
+no-loop true
+        when
+               	sintoma:Estabilidad(valor==Sintoma.Valor.MUYBAJO )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCAP);
+end
+
+rule "EstabilidadBajo"
 no-loop true
         when
                	sintoma:Estabilidad(valor==Sintoma.Valor.BAJO )
         then 
                 #actions
         		lesion.SumarUnoHash(Lesion.TipoLesion.LCA);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCP);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.ARTRITIS);
 end
 
-rule "InflamacionLCA"
+
+rule "EstabilidadNormal"
+no-loop true
+        when
+               	sintoma:Estabilidad(valor==Sintoma.Valor.NORMAL )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.MENISCOS);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.ARTRITIS);
+end
+
+rule "InflamacionMuyAlto"
+no-loop true
+        when
+               	sintoma:Inflamacion(valor==Sintoma.Valor.MUYALTO )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCAP);
+end
+
+rule "InflamacionAlto"
 no-loop true
         when
                	sintoma:Inflamacion(valor==Sintoma.Valor.ALTO )
         then 
                 #actions
         		lesion.SumarUnoHash(Lesion.TipoLesion.LCA);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCP);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCAP);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.TENDINITIS);
 end
 
-rule "RigidezLCA"
+rule "InflamacionMedio"
+no-loop true
+        when
+               	sintoma:Inflamacion(valor==Sintoma.Valor.MEDIO )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.ARTRITIS);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.MENISCOS);
+end
+
+rule "RigidezAlto"
+no-loop true
+        when
+               	sintoma:Rigidez(valor==Sintoma.Valor.ALTO )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.MENISCOS);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.ARTRITIS);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.TENDINITIS);
+end
+
+rule "RigidezMedio"
 no-loop true
         when
                	sintoma:Rigidez(valor==Sintoma.Valor.MEDIO )
         then 
                 #actions
         		lesion.SumarUnoHash(Lesion.TipoLesion.LCA);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCP);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.ARTRITIS);
 end
 
-rule "ZonaLCA"
+rule "RigidezBajo"
+no-loop true
+        when
+               	sintoma:Rigidez(valor==Sintoma.Valor.BAJO )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCAP);
+end
+
+rule "ZonaAnterior"
 no-loop true
         when
                	sintoma:Zona(valor==Sintoma.Valor.ANTERIOR )
         then 
                 #actions
         		lesion.SumarUnoHash(Lesion.TipoLesion.LCA);
+end
+
+rule "ZonaPosterior"
+no-loop true
+        when
+               	sintoma:Zona(valor==Sintoma.Valor.POSTERIOR )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCP);
+end
+
+rule "ZonaAmbos"
+no-loop true
+        when
+               	sintoma:Zona(valor==Sintoma.Valor.AMBOS )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCAP);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.MENISCOS);
+        		lesion.SumarUnoHash(Lesion.TipoLesion.ARTRITIS);
+end
+
+rule "ZonaFrontal"
+no-loop true
+        when
+               	sintoma:Zona(valor==Sintoma.Valor.ANTERIOR )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.TENDINITIS);
 end
