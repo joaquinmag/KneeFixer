@@ -11,7 +11,7 @@ public class Test extends TestCase {
 		try {
 			l.setInflamacion(new Inflamacion(Sintoma.Valor.ALTO));
 			Sintoma sintoma = new Inflamacion(Sintoma.Valor.ALTO);
-			Assert.assertTrue(l.getInflamacion().mismoSintoma(sintoma));
+			Assert.assertTrue(l.getInflamacion().equals(sintoma));
 		} catch (ValorIncorrectoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -23,7 +23,7 @@ public class Test extends TestCase {
 		try {
 			l.setInflamacion(new Inflamacion(Sintoma.Valor.ALTO));
 			Sintoma sintoma = new Dolor(Sintoma.Valor.ALTO);
-			Assert.assertFalse(l.getInflamacion().mismoSintoma(sintoma));
+			Assert.assertFalse(l.getInflamacion().equals(sintoma));
 		} catch (ValorIncorrectoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
