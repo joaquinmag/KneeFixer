@@ -14,6 +14,33 @@ html, .main {
 	background:#fff url(../images/dr/header_bg.jpg) repeat-x center 87px;
 }
 
+.box {
+    border: 1px grey solid;
+}
+
+.notInjury {
+    color: #ff0000;
+    text-decoration: line-through;
+}
+
+.diagnosisInjuries {
+    text-align: left; 
+    padding-left: 62px; 
+    padding-top: 20px;
+    border-left: 1px solid
+}
+
+.diagnosisControlButtons {
+    text-align: left; 
+    padding-left: 62px; 
+    padding-top: 20px;
+}
+
+.diagnosisQuestions {
+    text-align: center; 
+    padding-top: 20px;
+}
+
 .invisibleElement {
     display: none
 }
@@ -130,6 +157,21 @@ a.com span {
 	padding:0;
 	float:left;
 	width:670px;
+}
+.content .mainbar .question {
+	margin:0;
+	padding:0;
+	float:left;
+	width:450px;
+        text-align: center
+}
+.content .mainbar .injury {
+	margin:0;
+	padding:0;
+        padding-left: 5px;
+	float:left;
+	width:215px;
+        text-align: center
 }
 .content .mainbar img {
 	border:1px solid #d8dbdc;
