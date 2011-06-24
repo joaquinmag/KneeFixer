@@ -17,7 +17,9 @@ class DiagnosticoController {
             }
             else {
                 preguntaElegida = listaPreguntas[id-1]
-                [ pregunta : preguntaElegida.pregunta, posiblesRespuestas : preguntaElegida.posiblesRespuestas ]
+                [ pregunta : preguntaElegida.pregunta, 
+                    posiblesRespuestas : preguntaElegida.posiblesRespuestas, 
+                    idPregunta : id ]
             }
         }
     }

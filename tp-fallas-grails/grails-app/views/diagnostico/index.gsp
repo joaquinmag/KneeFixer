@@ -15,22 +15,25 @@
     <div class="question">
       <div class="">
         <h3>Preguntas</h3>
-        <div class="diagnosisQuestions">
-          <p>¿Qué grado de rigidez se observa en la rodilla del paciente? Alto</p>
-
-          <p>${pregunta}</p>
-          <p style="text-align: left; padding-left: 150px;">
-            <g:each in="${posiblesRespuestas}" status="i" var="opcion">
-            <input type="radio" name="dolor" value="${opcion}">    ${opcion}</input>
-            </g:each>
-          </p>
-        </div>
-        <div class="menu_nav">
-          <ul style="padding-right: 75px;">
-            <li class="active" id="siguiente_li"><a href="#">Anterior</a></li>
-            <li class="active" id="anterior_li"><a href="#">Siguiente</a></li>
-          </ul>
-        </div>
+        <g:form action="save" enctype="multipart/form-data">
+          <div class="diagnosisQuestions">
+            <p>¿Qué grado de rigidez se observa en la rodilla del paciente? Alto</p>
+            <p>${pregunta}</p>
+            <p style="text-align: left; padding-left: 150px;">
+              <g:each in="${posiblesRespuestas}" status="i" var="opcion">
+              <input type="radio" name="opcion" value="${opcion}">    ${opcion}</input><br />
+              </g:each>
+            </p>
+          </div>
+          <div class="menu_nav">
+            <ul style="padding-right: 75px;">
+              <li class="active" id="siguiente_li"><g:link controller="diagnostico" action="index" params="${idPregunta-1}">Anterior</g:link></li>
+            <!-- TODO ver si cambiando el submitButton por un link que use de parametros lo que tiene que pasar aca y que use controller y action los de el boton.
+                 se logra que la UI vuelva a como estaba antes -->
+              <li class="active" id="anterior_li"><a href="#"><g:submitButton name="next" class="save" value="Siguiente"/></a></li>
+            </ul>
+          </div>
+        </g:form>
       </div>
     </div>
 
