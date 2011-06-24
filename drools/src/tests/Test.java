@@ -7,7 +7,7 @@ import sintomas.*;
 
 public class Test extends TestCase {
 	public void testCompararLesionConInflamacionAltoConSintomaInflamacionAlto(){
-		Lesion l = new Lesion();
+		Diagnostico l = new Diagnostico();
 		try {
 			l.setInflamacion(new Inflamacion(Sintoma.Valor.ALTO));
 			Sintoma sintoma = new Inflamacion(Sintoma.Valor.ALTO);
@@ -19,7 +19,7 @@ public class Test extends TestCase {
 	}
 	
 	public void testCompararLesionConInflamacionAltoConSintomaDolorAlto(){
-		Lesion l = new Lesion();
+		Diagnostico l = new Diagnostico();
 		try {
 			l.setInflamacion(new Inflamacion(Sintoma.Valor.ALTO));
 			Sintoma sintoma = new Dolor(Sintoma.Valor.ALTO);
@@ -31,7 +31,7 @@ public class Test extends TestCase {
 	}
 	
 	public void testInflamacionTomaValorIncorrecto(){
-		Lesion l = new Lesion();
+		Diagnostico l = new Diagnostico();
 		try {
 			l.setInflamacion(new Inflamacion(Sintoma.Valor.ANTERIOR));
 			

@@ -1,0 +1,217 @@
+package rules;
+import sintomas.*;
+import lesiones.*;
+
+global Diagnostico lesion
+
+rule "DolorMuyAlto"
+no-loop true
+        when
+               	sintoma:Dolor(valor==Sintoma.Valor.MUYALTO)
+        then 
+                #actions
+				lesion.agregarNivelLesion(TipoLesion.LCAP);
+				lesion.setDolor(sintoma);
+end
+
+rule "DolorAlto"
+no-loop true
+        when
+               	sintoma:Dolor(valor==Sintoma.Valor.ALTO)
+        then 
+                #actions
+                lesion.agregarNivelLesion(TipoLesion.LCA);
+        		lesion.agregarNivelLesion(TipoLesion.LCP);
+        		lesion.agregarNivelLesion(TipoLesion.MENISCOS);
+        		lesion.agregarNivelLesion(TipoLesion.TENDINITIS);
+        		lesion.setDolor(sintoma);
+end
+
+rule "DolorMedio"
+no-loop true
+        when
+               	sintoma:Dolor(valor==Sintoma.Valor.MEDIO)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
+        		lesion.agregarNivelLesion(TipoLesion.TENDINITIS);
+        		lesion.setDolor(sintoma);
+end
+
+rule "RuidoCrujiente"
+no-loop true
+        when
+               	sintoma:Ruido(valor==Sintoma.Valor.CRUJIENTE)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.LCA);
+        		lesion.agregarNivelLesion(TipoLesion.LCP);
+        		lesion.agregarNivelLesion(TipoLesion.LCAP);
+        		lesion.setRuido(sintoma);
+end
+
+rule "RuidoSeco"
+no-loop true
+        when
+               	sintoma:Ruido(valor==Sintoma.Valor.RUIDOSECO)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.MENISCOS);
+        		lesion.setRuido(sintoma);
+end
+
+rule "RuidoNinguno"
+no-loop true
+        when
+               	sintoma:Ruido(valor==Sintoma.Valor.NINGUNO)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.TENDINITIS);
+        		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
+        		lesion.setRuido(sintoma);
+end
+
+
+rule "EstabilidadMuyBajo"
+no-loop true
+        when
+               	sintoma:Estabilidad(valor==Sintoma.Valor.MUYBAJO)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.LCAP);
+        		lesion.setEstabilidad(sintoma);
+end
+
+rule "EstabilidadBajo"
+no-loop true
+        when
+               	sintoma:Estabilidad(valor==Sintoma.Valor.BAJO)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.LCA);
+        		lesion.agregarNivelLesion(TipoLesion.LCP);
+        		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
+        		lesion.setEstabilidad(sintoma);
+end
+
+
+rule "EstabilidadNormal"
+no-loop true
+        when
+               	sintoma:Estabilidad(valor==Sintoma.Valor.NORMAL)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.MENISCOS);
+        		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
+        		lesion.setEstabilidad(sintoma);
+end
+
+rule "InflamacionMuyAlto"
+no-loop true
+        when
+               	sintoma:Inflamacion(valor==Sintoma.Valor.MUYALTO)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.LCAP);
+        		lesion.setInflamacion(sintoma);
+end
+
+rule "InflamacionAlto"
+no-loop true
+        when
+               	sintoma:Inflamacion(valor==Sintoma.Valor.ALTO)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.LCA);
+        		lesion.agregarNivelLesion(TipoLesion.LCP);
+        		lesion.agregarNivelLesion(TipoLesion.LCAP);
+        		lesion.agregarNivelLesion(TipoLesion.TENDINITIS);
+        		lesion.setInflamacion(sintoma);
+end
+
+rule "InflamacionMedio"
+no-loop true
+        when
+               	sintoma:Inflamacion(valor==Sintoma.Valor.MEDIO)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
+        		lesion.agregarNivelLesion(TipoLesion.MENISCOS);
+        		lesion.setInflamacion(sintoma);
+end
+
+rule "RigidezAlto"
+no-loop true
+        when
+               	sintoma:Rigidez(valor==Sintoma.Valor.ALTO)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.MENISCOS);
+        		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
+        		lesion.agregarNivelLesion(TipoLesion.TENDINITIS);
+        		lesion.setRigidez(sintoma);
+end
+
+rule "RigidezMedio"
+no-loop true
+        when
+               	sintoma:Rigidez(valor==Sintoma.Valor.MEDIO)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.LCA);
+        		lesion.agregarNivelLesion(TipoLesion.LCP);
+        		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
+        		lesion.setRigidez(sintoma);
+end
+
+rule "RigidezBajo"
+no-loop true
+        when
+               	sintoma:Rigidez(valor==Sintoma.Valor.BAJO)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.LCAP);
+        		lesion.setRigidez(sintoma);
+end
+
+rule "ZonaAnterior"
+no-loop true
+        when
+               	sintoma:Zona(valor==Sintoma.Valor.ANTERIOR)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.LCA);
+        		lesion.setZona(sintoma);
+end
+
+rule "ZonaPosterior"
+no-loop true
+        when
+               	sintoma:Zona(valor==Sintoma.Valor.POSTERIOR)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.LCP);
+        		lesion.setZona(sintoma);
+end
+
+rule "ZonaAmbos"
+no-loop true
+        when
+               	sintoma:Zona(valor==Sintoma.Valor.AMBOS)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.LCAP);
+        		lesion.agregarNivelLesion(TipoLesion.MENISCOS);
+        		lesion.agregarNivelLesion(TipoLesion.ARTRITIS);
+        		lesion.setZona(sintoma);
+end
+
+rule "ZonaFrontal"
+no-loop true
+        when
+               	sintoma:Zona(valor==Sintoma.Valor.FRONTAL)
+        then 
+                #actions
+        		lesion.agregarNivelLesion(TipoLesion.TENDINITIS);
+        		lesion.setZona(sintoma);
+end

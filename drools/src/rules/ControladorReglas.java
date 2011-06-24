@@ -1,54 +1,35 @@
 package rules;
 
-import org.drools.KnowledgeBase;
-import org.drools.KnowledgeBaseFactory;
-import org.drools.builder.KnowledgeBuilder;
-import org.drools.builder.KnowledgeBuilderError;
-import org.drools.builder.KnowledgeBuilderErrors;
-import org.drools.builder.KnowledgeBuilderFactory;
-import org.drools.builder.ResourceType;
-import org.drools.io.Resource;
-import org.drools.io.ResourceFactory;
-import org.drools.runtime.StatefulKnowledgeSession;
+import java.util.List;
+
+import lesiones.TipoLesion;
+
+import sintomas.Diagnostico;
+import sintomas.Sintoma;
 
 public class ControladorReglas {
 
-	StatefulKnowledgeSession ksession;
-
-	public ControladorReglas(String archivoDrools) throws Exception {
-		KnowledgeBase kbase = leerBaseDeConocimiento(archivoDrools);
-		ksession = kbase.newStatefulKnowledgeSession();
+	public ControladorReglas(List<Sintoma> sintomas) {
+		Diagnostico lesion = ejecutarReglasSintomas(sintomas);
+		System.out.println(lesion.getLesiones());
 	}
 
-	private KnowledgeBase leerBaseDeConocimiento(String archivoDrools)
-			throws Exception {
-
-		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-		Resource newClassPathResource = ResourceFactory.newClassPathResource(archivoDrools);
-		kbuilder.add(newClassPathResource,	ResourceType.DRL);
-		KnowledgeBuilderErrors errors = kbuilder.getErrors();
-
-		if (errors.size() > 0){
-			for (KnowledgeBuilderError error: errors) {
-				System.err.println(error);
-			}
-			throw new IllegalArgumentException("Error al leer la base de conocimientos.");
-		}
+	private Diagnostico ejecutarReglasSintomas(List<Sintoma> sintomas) {
+		String path = "rules/ReglasSintomas.drl";
+		Drools drools = new Drools(path);
 		
-		KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
-		kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
-		return kbase;
-	}
+		Diagnostico lesion = new Diagnostico();
+		drools.setVariableGlobal("lesion", lesion);
 
-	public void insertarEnBase(Object obj) {
-		ksession.insert(obj);
+		for (Sintoma sintoma : sintomas)
+			drools.insertarEnBase(sintoma);
+		
+		drools.analizarReglas();
+		
+		return lesion;
 	}
-
-	public void analizarReglas() {
-		ksession.fireAllRules();
-	}
-
-	public void setVariableGlobal(String nombre, Object obj) {
-		ksession.setGlobal(nombre, obj);
+		
+	public TipoLesion getPosiblesLesiones(){
+		return null;
 	}
 }
