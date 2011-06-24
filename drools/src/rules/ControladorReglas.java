@@ -35,8 +35,6 @@ public class ControladorReglas {
 			ksession = kbase.newStatefulKnowledgeSession();
 			KnowledgeRuntimeLogger logger = KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, "test");
 
-			inicializarLesiones();
-            //ksession.setGlobal("lesiones", lesionesPosibles);
             return logger;
 
 		} 
@@ -102,62 +100,32 @@ public class ControladorReglas {
 		return contiene;
 	}*/
 
-
-	private void inicializarLesiones(){
-            Lesion l = null;
-            try{
-                l = new LCA(new Dolor(Sintoma.Valor.ALTO),new Ruido(Sintoma.Valor.CRUJIENTE), new Zona(Sintoma.Valor.ANTERIOR), new Rigidez(Sintoma.Valor.MEDIO), new Estabilidad(Sintoma.Valor.BAJO), new Inflamacion(Sintoma.Valor.ALTO));
-                this.getLesionesPosibles().add(l);
-                   
-                l = new LCP(new Dolor(Sintoma.Valor.MUYALTO),new Ruido(Sintoma.Valor.CRUJIENTE), new Zona(Sintoma.Valor.POSTERIOR), new Rigidez(Sintoma.Valor.MEDIO), new Estabilidad(Sintoma.Valor.MEDIO), new Inflamacion(Sintoma.Valor.ALTO));
-                this.getLesionesPosibles().add(l);
-                    
-                l = new LCAP(new Dolor(Sintoma.Valor.ALTO),new Ruido(Sintoma.Valor.CRUJIENTE), new Zona(Sintoma.Valor.AMBOS), new Rigidez(Sintoma.Valor.BAJO), new Estabilidad(Sintoma.Valor.MUYBAJO), new Inflamacion(Sintoma.Valor.MUYALTO));
-                this.getLesionesPosibles().add(l);
-                l = new LCAP(new Dolor(Sintoma.Valor.ALTO),new Ruido(Sintoma.Valor.CRUJIENTE), new Zona(Sintoma.Valor.AMBOS), new Rigidez(Sintoma.Valor.BAJO), new Estabilidad(Sintoma.Valor.MUYBAJO), new Inflamacion(Sintoma.Valor.ALTO));
-                this.getLesionesPosibles().add(l);
-                    
-                l = new Artritis(new Dolor(Sintoma.Valor.MEDIO),new Ruido(Sintoma.Valor.NINGUNO), new Zona(Sintoma.Valor.AMBOS), new Rigidez(Sintoma.Valor.MEDIO), new Estabilidad(Sintoma.Valor.NORMAL), new Inflamacion(Sintoma.Valor.MEDIO));
-                this.getLesionesPosibles().add(l);
-                l = new Artritis(new Dolor(Sintoma.Valor.MEDIO),new Ruido(Sintoma.Valor.NINGUNO), new Zona(Sintoma.Valor.AMBOS), new Rigidez(Sintoma.Valor.ALTO), new Estabilidad(Sintoma.Valor.NORMAL), new Inflamacion(Sintoma.Valor.MEDIO));
-                this.getLesionesPosibles().add(l);
-                l = new Artritis(new Dolor(Sintoma.Valor.MEDIO),new Ruido(Sintoma.Valor.NINGUNO), new Zona(Sintoma.Valor.AMBOS), new Rigidez(Sintoma.Valor.MEDIO), new Estabilidad(Sintoma.Valor.BAJO), new Inflamacion(Sintoma.Valor.MEDIO));
-                this.getLesionesPosibles().add(l);
-                l = new Artritis(new Dolor(Sintoma.Valor.MEDIO),new Ruido(Sintoma.Valor.NINGUNO), new Zona(Sintoma.Valor.AMBOS), new Rigidez(Sintoma.Valor.ALTO), new Estabilidad(Sintoma.Valor.BAJO), new Inflamacion(Sintoma.Valor.MEDIO));
-                this.getLesionesPosibles().add(l);
-                    
-                l = new Menisco(new Dolor(Sintoma.Valor.ALTO),new Ruido(Sintoma.Valor.RUIDOSECO), new Zona(Sintoma.Valor.AMBOS), new Rigidez(Sintoma.Valor.ALTO), new Estabilidad(Sintoma.Valor.NORMAL), new Inflamacion(Sintoma.Valor.MEDIO));
-                this.getLesionesPosibles().add(l);
-                    
-                l = new Tendon(new Dolor(Sintoma.Valor.MEDIO),new Ruido(Sintoma.Valor.NINGUNO), new Zona(Sintoma.Valor.FRONTAL), new Rigidez(Sintoma.Valor.ALTO), new Estabilidad(Sintoma.Valor.NORMAL), new Inflamacion(Sintoma.Valor.MEDIO));
-                this.getLesionesPosibles().add(l);
-                l = new Tendon(new Dolor(Sintoma.Valor.ALTO),new Ruido(Sintoma.Valor.NINGUNO), new Zona(Sintoma.Valor.FRONTAL), new Rigidez(Sintoma.Valor.ALTO), new Estabilidad(Sintoma.Valor.NORMAL), new Inflamacion(Sintoma.Valor.MEDIO));
-                this.getLesionesPosibles().add(l);
-                l = new Tendon(new Dolor(Sintoma.Valor.MEDIO),new Ruido(Sintoma.Valor.NINGUNO), new Zona(Sintoma.Valor.FRONTAL), new Rigidez(Sintoma.Valor.ALTO), new Estabilidad(Sintoma.Valor.NORMAL), new Inflamacion(Sintoma.Valor.ALTO));
-                this.getLesionesPosibles().add(l);
-                l = new Tendon(new Dolor(Sintoma.Valor.ALTO),new Ruido(Sintoma.Valor.NINGUNO), new Zona(Sintoma.Valor.FRONTAL), new Rigidez(Sintoma.Valor.ALTO), new Estabilidad(Sintoma.Valor.NORMAL), new Inflamacion(Sintoma.Valor.ALTO));
-                this.getLesionesPosibles().add(l);      
-            }
-            catch(ValorIncorrectoException e){}
+	public void AgregarVariableGlobal(Lesion l){
+		ksession.setGlobal("lesion", l);
 	}
         
-        public static void main(String [ ] args){
-            ControladorReglas con = new ControladorReglas();
-            try {
-            	KnowledgeRuntimeLogger logger = con.inicializarReglas();
-            	Sintoma dolor = new Dolor(Sintoma.Valor.ALTO);
-                con.insertarSintoma(dolor);
-                con.fireAllRules();
-                System.out.println(dolor.v);
-                logger.close();
-            } catch (ValorIncorrectoException ex) {
+	public static void main(String [ ] args){
+		ControladorReglas con = new ControladorReglas();
+        try {
+        	KnowledgeRuntimeLogger logger = con.inicializarReglas();
+            Lesion l = new Lesion(new Dolor(Sintoma.Valor.ALTO),new Ruido(Sintoma.Valor.CRUJIENTE), new Zona(Sintoma.Valor.ANTERIOR), new Rigidez(Sintoma.Valor.MEDIO), new Estabilidad(Sintoma.Valor.BAJO), new Inflamacion(Sintoma.Valor.ALTO));
+            con.AgregarVariableGlobal(l);
+            con.insertarSintoma(l.getDolor());
+        	con.insertarSintoma(l.getEstabilidad());
+        	con.insertarSintoma(l.getInflamacion());
+        	con.insertarSintoma(l.getRigidez());
+        	con.insertarSintoma(l.getRuido());
+        	con.insertarSintoma(l.getZona());
+            con.fireAllRules();
+            System.out.println(l.getLesiones().get(Lesion.TipoLesion.LCA));
+            logger.close();
+        } catch (ValorIncorrectoException ex) {
                 
-            }
-            catch (NullPointerException ex){
-            	System.out.println("A");
+        } catch (NullPointerException ex){
+        	System.out.println("A");
             	
-            }
-            
         }
+            
+	}
 }
 

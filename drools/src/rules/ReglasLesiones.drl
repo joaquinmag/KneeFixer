@@ -1,12 +1,61 @@
 package rules;
 import sintomas.*;
+import lesiones.*;
 
 
-rule "DolorAlto"
+global Lesion lesion
+
+
+rule "DolorLCA"
 no-loop true
         when
-               	sintoma:Dolor(valor == Sintoma.Valor.ALTO)
+               	sintoma:Dolor(valor==Sintoma.Valor.ALTO )
         then 
                 #actions
-        		sintoma.v = true;
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCA);
+end
+
+rule "RuidoLCA"
+no-loop true
+        when
+               	sintoma:Ruido(valor==Sintoma.Valor.CRUJIENTE )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCA);
+end
+
+rule "EstabilidadLCA"
+no-loop true
+        when
+               	sintoma:Estabilidad(valor==Sintoma.Valor.BAJO )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCA);
+end
+
+rule "InflamacionLCA"
+no-loop true
+        when
+               	sintoma:Inflamacion(valor==Sintoma.Valor.ALTO )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCA);
+end
+
+rule "RigidezLCA"
+no-loop true
+        when
+               	sintoma:Rigidez(valor==Sintoma.Valor.MEDIO )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCA);
+end
+
+rule "ZonaLCA"
+no-loop true
+        when
+               	sintoma:Zona(valor==Sintoma.Valor.ANTERIOR )
+        then 
+                #actions
+        		lesion.SumarUnoHash(Lesion.TipoLesion.LCA);
 end

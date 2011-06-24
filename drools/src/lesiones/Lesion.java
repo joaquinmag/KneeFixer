@@ -1,14 +1,28 @@
 package lesiones;
 
+import java.util.HashMap;
+
 import sintomas.Sintoma;
 
 public class Lesion {
-	private Sintoma dolor;
+	public Sintoma dolor;
 	private Sintoma ruido;
 	private Sintoma zona;
 	private Sintoma rigidez;
 	private Sintoma estabilidad;
 	private Sintoma inflamacion;
+	private String nombreLesion;
+	
+	public enum TipoLesion{
+		LCA,
+		LCP,
+		LCAP,
+		TENDINITIS,
+		MENISCOS,
+		ARTRITIS		
+	}
+	
+	private HashMap<TipoLesion,Integer> lesiones;
 	
 	public Lesion(){}
 	
@@ -19,6 +33,7 @@ public class Lesion {
 		setRigidez(rigidez);
 		setEstabilidad(estabilidad);
 		setInflamacion(inflamacion);
+		setLesiones(new HashMap<TipoLesion,Integer>());
 	}
 	
 	public void setDolor(Sintoma dolor) {
@@ -63,8 +78,30 @@ public class Lesion {
 		return inflamacion;
 	}
         
-        public boolean mismaLesion (Lesion otraLesion)
-        {
-           return (this.getDolor().mismoSintoma(otraLesion.getDolor()) && this.getEstabilidad().mismoSintoma((otraLesion.getEstabilidad())));
-        }
+    public boolean mismaLesion (Lesion otraLesion)
+    {
+    	return (this.getDolor().mismoSintoma(otraLesion.getDolor()) && this.getEstabilidad().mismoSintoma((otraLesion.getEstabilidad())));
+    }
+    
+    public String toString()
+    {
+    	return this.nombreLesion;
+    }
+
+	public void setLesiones(HashMap<TipoLesion,Integer> lesiones) {
+		this.lesiones = lesiones;
+	}
+
+	public HashMap<TipoLesion,Integer> getLesiones() {
+		return lesiones;
+	}
+	
+	/*En el tipo de lesion suma uno.*/
+	public void SumarUnoHash(TipoLesion tipolesion){
+		if(this.getLesiones().containsKey(tipolesion))
+			this.getLesiones().put(tipolesion,this.getLesiones().get(tipolesion).intValue()+1);
+		else
+			this.getLesiones().put(tipolesion, 1);
+	}
+	
 }

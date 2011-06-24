@@ -1,10 +1,15 @@
 package sintomas;
 
+import java.util.ArrayList;
+
 public abstract class Sintoma {
-	public Sintoma() throws ValorIncorrectoException{}
+	public Sintoma() throws ValorIncorrectoException{
+		this.setIncluidoEn(new ArrayList<String>());
+	}
 	
-	private Valor valor;
-	public boolean v = false;
+	public Valor valor;
+	
+	private ArrayList<String> incluidoEn;
 	
 	public enum Valor{
 		BAJO,
@@ -18,8 +23,8 @@ public abstract class Sintoma {
 		POSTERIOR,
 		AMBOS,
 		FRONTAL,
-                NORMAL,
-                MUYBAJO
+        NORMAL,
+        MUYBAJO
 	}
 	
 	
@@ -35,5 +40,19 @@ public abstract class Sintoma {
 
 	public Valor getValor() {
 		return valor;
+	}
+
+
+	public void setIncluidoEn(ArrayList<String> incluidoEn) {
+		this.incluidoEn = incluidoEn;
+	}
+
+
+	public ArrayList<String> getIncluidoEn() {
+		return incluidoEn;
+	}
+	
+	public void AgregarSintomaIncluidoEn(String lesion){
+		this.getIncluidoEn().add(lesion);
 	}
 }
