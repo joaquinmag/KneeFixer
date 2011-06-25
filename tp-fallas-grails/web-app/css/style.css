@@ -16,7 +16,7 @@ html, .main {
 
 .box {
     border: 1px grey solid;
-}
+} 
 
 .notInjury {
     color: #ff0000;
@@ -143,9 +143,22 @@ a.com span {
 	text-decoration:none;
 	font-size:12px;
 }
+.menu_nav ul li input {
+	display:block;
+	margin:0;
+	padding:3px 20px 4px;
+	color:#959595;
+	text-decoration:none;
+	font-size:12px;
+        border-radius:15px 15px 15px 15px;
+}
 .menu_nav ul li.active a, .menu_nav ul li a:hover {
 	color:#fff;
 	background:url(../images/dr/menu_a.gif) repeat-x center top;
+}
+.menu_nav ul li.active input, .menu_nav ul li input:hover {
+	color:#fff;
+	background:url("../images/dr/menu_a.gif") repeat-x center top;
 }
 .content_resize {
 	margin:0 auto;

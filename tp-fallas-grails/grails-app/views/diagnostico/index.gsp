@@ -33,7 +33,7 @@
           </div>
           <div class="menu_nav">
             <ul style="padding-right: 75px;">
-              <li class="active" id="anterior_li"><a href="#"><g:submitButton name="next" value="Siguiente"/></a></li>
+              <li class="active" id="anterior_li"><g:submitButton name="next" value="Siguiente"/></li>
             </ul>
           </div>
         </g:form>
