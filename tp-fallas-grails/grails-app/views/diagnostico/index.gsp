@@ -18,20 +18,25 @@
         <g:form action="nextQuestion" enctype="multipart/form-data">
           <div class="diagnosisQuestions">
             <g:hiddenField name="idPregunta" value="${idPregunta}" /> 
-            <p>¿Qué grado de rigidez se observa en la rodilla del paciente? Alto</p>
+            <ul>
+              <g:each in="${respuestas}" status="i" var="respuesta">
+                <li>${respuesta.descripcion} - ${respuesta.respuesta}</li>
+              </g:each>
+            </ul>
+            
             <p>${pregunta}</p>
             <p style="text-align: left; padding-left: 150px;">
-              <g:each in="${posiblesRespuestas}" status="i" var="opcion">
+            <g:each in="${posiblesRespuestas}" status="i" var="opcion">
               <input type="radio" name="opcion" value="${opcion}">    ${opcion}</input><br />
-              </g:each>
+            </g:each>
             </p>
           </div>
           <div class="menu_nav">
             <ul style="padding-right: 75px;">
               <li class="active" id="siguiente_li"><g:link controller="diagnostico" action="index" params="${idPregunta-1}">Anterior</g:link></li>
-            <!-- TODO ver si cambiando el submitButton por un link que use de parametros lo que tiene que pasar aca y que use controller y action los de el boton.
-                 se logra que la UI vuelva a como estaba antes -->
-              <li class="active" id="anterior_li"><a href="#"><g:submitButton name="next" class="save" value="Siguiente"/></a></li>
+              <!-- TODO ver si cambiando el submitButton por un link que use de parametros lo que tiene que pasar aca y que use controller y action los de el boton.
+                   se logra que la UI vuelva a como estaba antes -->
+              <li class="active" id="anterior_li"><a href="#"><g:submitButton name="next" value="Siguiente"/></a></li>
             </ul>
           </div>
         </g:form>
@@ -50,15 +55,6 @@
           <li>Tendinitis Rotuliana</li>
         </ul>
       </div>
-    </div>
-
-    <div style="clear:both;">
-      <h2>Respuestas actuales</h2>
-      <ol>
-        <g:each in="${respuestasActuales}" status="i" var="respuesta">
-          <li>${respuesta}</li>
-        </g:each>
-      </ol>
     </div>
   </body>
 </html>

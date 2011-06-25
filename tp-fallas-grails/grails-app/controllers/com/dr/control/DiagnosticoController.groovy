@@ -1,61 +1,100 @@
 package com.dr.control
 
+import rules.ControladorReglas
+import lesiones.TipoLesion
+import sintomas.*
+
 class DiagnosticoController {
 
-    String keyRespuestas = "respuestas"
-    
+    String keyPreguntasRespuestas = "respuestas"
+    String keyPreguntas = "preguntas"
+        
     def index = { 
-        def listaPreguntas = cargarPreguntas()
+                
         if (!params.id) {
+            
+            def respuestas = []
+            session[keyPreguntasRespuestas] = respuestas
+            session[keyPreguntas] = cargarPreguntas()
             redirect(controller: "diagnostico", action: "index", params: [id: 1])
         }
         else {
-            Pregunta preguntaElegida
+            def preguntas = session[keyPreguntas]
+            def respuestas = session[keyPreguntasRespuestas]
+            
+            Pregunta preguntaActual
+                        
             int id = Integer.parseInt(params.id, 10)
-            //si no esta dentro del rango posible de preguntas
-            int size = listaPreguntas.size()
-            if (id < 1 || id > size) {
-                throw new Exception("No hay una pregunta asociada para el id: ${id}")
-            }
-            else {
-                preguntaElegida = listaPreguntas[id-1]
-                [ pregunta : preguntaElegida.pregunta, 
-                    posiblesRespuestas : preguntaElegida.posiblesRespuestas, 
-                    idPregunta : id,
-                    respuestasActuales : session[keyRespuestas]
-                  ]
+            
+            if (id < preguntas.size()){
+                
+                preguntaActual = preguntas[id - 1]
+                return [ pregunta : preguntaActual.pregunta,
+                         posiblesRespuestas : preguntaActual.posiblesRespuestas,
+                         idPregunta : id,
+                         respuestas : respuestas ]
             }
         }
     }
     
     def nextQuestion = {
+        
         if (!params.idPregunta) {
             render(view: "index")
         }
         else {
-            if (!session[keyRespuestas]) {
-                def respuestas = [:]
-                session[keyRespuestas] = respuestas
-            }
-            def respuestas = session[keyRespuestas]
-            respuestas[params.idPregunta] = params.opcion
-            session[keyRespuestas] = respuestas
-            redirect(action: "index", params: [id: Integer.parseInt(params.idPregunta,10)+1])
+            def preguntas = session[keyPreguntas]
+            def respuestas = session[keyPreguntasRespuestas]
+            int id = Integer.parseInt(params.idPregunta, 10) 
+            
+            def pregunta = preguntas[id - 1]
+            pregunta.respuesta = params.opcion
+            respuestas.add(pregunta)
+                        
+            int newId = Integer.parseInt(params.idPregunta,10) + 1
+            redirect(action: "index", params: [id: newId])
         }
     }
     
     def cargarPreguntas() {
+        
         Pregunta pregunta1 = new Pregunta(
-            pregunta : "¿Cual es su nombre?",
-            posiblesRespuestas : [ "Si" , "No" ]
+            pregunta : "¿Qué grado de dolor del paciente?",
+            posiblesRespuestas : [ "Medio" , "Alto" , "Muy alto" ],
+            descripcion : "Dolor"
         )
         
         Pregunta pregunta2 = new Pregunta(
-            pregunta : "¿Que comida le gusta?",
-            posiblesRespuestas : [ "Mucha" , "Poca" ]
+            pregunta : "¿Qué grado de rigidez se observa en la rodilla del paciente?",
+            posiblesRespuestas : [ "Bajo" , "Medio" , "Alto" ],
+            descripcion : "Rigidez"
         )
         
-        def listaPreguntas = [ pregunta1, pregunta2 ]
-        listaPreguntas
+        Pregunta pregunta3 = new Pregunta(
+            pregunta : "¿Cuál es el nivel de estabilidad que se observa en la rodilla del paciente?",
+            posiblesRespuestas : [ "Bajo" , "Medio" , "Alto" ],
+            descripcion : "Estabilidad"
+        )
+        
+        Pregunta pregunta4 = new Pregunta(
+            pregunta : "¿Cuál es la zona de dolor dominante en la rodilla del paciente?",
+            posiblesRespuestas : [ "Anterior" , "Posterior" , "Ambas", "Frontal" ],
+            descripcion : "Zona"
+        )
+        
+        Pregunta pregunta5 = new Pregunta(
+            pregunta : "¿Cuál fue el sonido presente al momento de la lesión?",
+            posiblesRespuestas : [ "Crujiente" , "Seco" , "Ninguno" ],
+            descripcion : "Sonido"
+        )
+        
+        Pregunta pregunta6 = new Pregunta(
+            pregunta : "¿Cuál es el nivel de inflamación que se observa en la rodilla del paciente?",
+            posiblesRespuestas : [ "Medio" , "Alto" , "Muy alto" ],
+            descripcion : "Inflamación"
+        )
+                
+        def listaPreguntas = [ pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6 ]
+        return listaPreguntas
     }
 }

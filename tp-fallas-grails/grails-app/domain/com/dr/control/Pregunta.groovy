@@ -5,6 +5,7 @@ class Pregunta {
     String pregunta
     def posiblesRespuestas
     String respuesta
+    String descripcion
     
     static constraints = {
     }
