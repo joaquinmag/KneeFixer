@@ -26,7 +26,7 @@ class DiagnosticoController {
                         
             int id = Integer.parseInt(params.id, 10)
             
-            if (id < preguntas.size()){
+            if (id <= preguntas.size()){
                 
                 preguntaActual = preguntas[id - 1]
                 return [ pregunta : preguntaActual.pregunta,
@@ -34,7 +34,13 @@ class DiagnosticoController {
                          idPregunta : id,
                          respuestas : respuestas ]
             }
+            else
+                redirect(controller: "diagnostico", action: "result", params: [result: 'Lesión'])
         }
+    }
+    
+    def result = {        
+        return [lesion : params.result]
     }
     
     def nextQuestion = {
