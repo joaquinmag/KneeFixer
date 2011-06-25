@@ -5,9 +5,9 @@ import java.util.List;
 
 public enum TipoLesion {
 		
-		LCA("Ligamento cruzado anterior"),
-		LCP("Ligamento cruzado posterior"),
-		LCAP("Ligamento cruzado anterior y posterior"),
+		LCA("Ruptura LCA"),
+		LCP("Ruptura LCP"),
+		LCAP("Ruptura LCAP"),
 		TENDINITIS("Tendinitis rotuliana"),
 		MENISCOS("Ruptura de meniscos"),
 		ARTRITIS("Artritis");

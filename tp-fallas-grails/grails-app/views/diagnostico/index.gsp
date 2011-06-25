@@ -15,7 +15,7 @@
     <div class="question">
       <div class="">
         <h3>Preguntas</h3>
-        <g:form action="nextQuestion" enctype="multipart/form-data">
+        <g:form enctype="multipart/form-data">
           <g:hiddenField name="idPregunta" value="${idPregunta}" /> 
           <div class="diagnosisQuestions">
             <ol>
@@ -23,17 +23,19 @@
                 <li>${respuesta.descripcion} - ${respuesta.respuesta}</li>
               </g:each>
             </ol>
-            
+
             <p>${pregunta}</p>
             <p style="text-align: left; padding-left: 150px;">
             <g:each in="${posiblesRespuestas}" status="i" var="opcion">
-              <input type="radio" name="opcion" value="${opcion}">    ${opcion}</input><br />
+              <input type="radio" name="opcion" value="${opcion}" ${i == 0 ? 'checked' : ''}>    ${opcion}</input><br />
             </g:each>
             </p>
           </div>
           <div class="menu_nav">
             <ul style="padding-right: 75px;">
-              <li class="active" id="anterior_li"><g:submitButton name="next" value="Siguiente"/></li>
+              <li id="anterior_li" class="${idPregunta == 1 ? 'invisibleElement' : 'active'}"><g:actionSubmit value="Anterior" name="previous" action="previousQuestion"/></li>
+              <li class="${idPregunta != 1 ? 'invisibleElement' : 'active'}" id="anterior_li"><g:actionSubmit style="${idPregunta == 1 ? 'background:gray;' : ''}" disabled="${idPregunta == 1 ? 'true' : 'false'}" value="Anterior" name="previous" action="previousQuestion"/></li>
+              <li class="active" id="anterior_li"><g:actionSubmit value="Siguiente" name="next" action="nextQuestion"/></li>              
             </ul>
           </div>
         </g:form>
@@ -44,12 +46,12 @@
       <div class="">
         <h3>Lesiones</h3>
         <ul class="diagnosisInjuries">
-          <li class="notInjury">Ruptura del LCA</li>
-          <li class="notInjury">Ruptura del LCP</li>
-          <li>Ruptura del LCA y LCP</li>
-          <li>Ruptura de Menisco</li>
-          <li>Artritis de la rodilla</li>
-          <li>Tendinitis Rotuliana</li>
+          <g:each in="${lesionesPosibles}" status="i" var="lesion">
+            <li>${lesion.getNombre()}</li>
+          </g:each>
+          <g:each in="${lesionesDescartadas}" status="i" var="lesion">
+            <li class="notInjury">${lesion.getNombre()}</li>
+          </g:each>
         </ul>
       </div>
     </div>
