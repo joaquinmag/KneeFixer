@@ -7,6 +7,17 @@
     <meta name="layout" content="main" />
   </head>
   <body>
+    <style type="text/css">
+      .tooltip {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 300px;
+        height: 300px;
+        background-color: #00ff00;
+      }
+    </style>
+
     <script type="text/javascript">
       document.getElementById('diagnostico_li').className = 'active'
     </script>
@@ -25,12 +36,14 @@
             </ol>
 
             <p>${pregunta}</p>
+
             <p style="text-align: left; padding-left: 150px;">
             <g:each in="${posiblesRespuestas}" status="i" var="opcion">
               <input type="radio" name="opcion" value="${opcion}" ${i == 0 ? 'checked' : ''}>    ${opcion}</input><br />
             </g:each>
             </p>
           </div>
+          <div>
           <div class="menu_nav">
             <ul style="padding-right: 75px;">
               <li id="anterior_li" class="${idPregunta == 1 ? 'invisibleElement' : 'active'}"><g:actionSubmit value="Anterior" name="previous" action="previousQuestion"/></li>
@@ -38,7 +51,15 @@
               <li class="active" id="anterior_li"><g:actionSubmit value="Siguiente" name="next" action="nextQuestion"/></li>              
             </ul>
           </div>
+            </div>
         </g:form>
+        
+
+      </div>
+      
+      <div style="text-align: left; padding-top:75px;">
+        <h3>Valores de referencia</h3>
+        <p>${ayudaPregunta}</p>
       </div>
     </div>
 
