@@ -1,0 +1,54 @@
+Dolor
+
+Medio: El dolor es una molestia que se produce al realizarse un movimiento, pero no es intenso.
+
+Alto: El dolor es fuerte cuando se realiza un movimiento en particular, mientras que no se realice ese movimiento es tolerable.
+
+Muy Alto: El dolor es intenso y constante, no permite mover la rodilla.
+
+
+Rigidez
+
+Bajo: Cuando se realiza algún movimiento se tiene una leve sensación de que la misma no lo hace perfectamente, sino que es medio trabado o forzado.
+
+Medio: Se encuentra incapacitada para algun tipo de movimiento en particular, no es posible realizarlo.
+
+Alto: Se siente dura, practicamente no tiene movilidad, se siente como que la misma esta trabada.
+
+
+Estabilidad
+
+Normal: Se encuentra estable.
+
+Bajo: Puede sentirse inestabilidad al realizarse algún movimiento, genera una sensación de inseguridad.
+
+Muy Bajo: No se presenta estabilidad, se tiene la sensación que la misma esta "colgando".
+
+
+Ruido
+
+Ninguno: No se produjo ningún sonido al momento de la lesión.
+
+Crujiente: El sonido producido al momento de la lesión fue similar a un ruido crujiente.
+
+Ruido Seco: El sonido producido al momento de la lesión fue similar a un ruido seco.
+
+
+Inflamación
+
+Medio: No se nota un tamaño mayor al normal, pero al tocarla se encuentra un poco caliente.
+
+Alto: Se encuentra con un tamaño un poco mayor al normal, pero mantiene un color normal y no presenta manchas. Al tocarla se encuentra caliente.
+
+Muy Alto: Se presenta un tamaño mucho mayor al normal. El color no es el normal, pueden aparecer manchas en la piel. Al tocarla se encuentra muy caliente.
+
+
+Zona
+
+Anterior: El dolor se produce en la parte anterior.
+
+Posterior: El dolor se produce en la parte posterior.
+
+Anterior y Posterior: El dolor se produce tanto en la parte anterior como posterior.
+
+Frontal: El dolor se produce en la parte frontal.
