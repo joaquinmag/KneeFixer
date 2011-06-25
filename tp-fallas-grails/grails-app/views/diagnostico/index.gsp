@@ -16,13 +16,13 @@
       <div class="">
         <h3>Preguntas</h3>
         <g:form action="nextQuestion" enctype="multipart/form-data">
+          <g:hiddenField name="idPregunta" value="${idPregunta}" /> 
           <div class="diagnosisQuestions">
-            <g:hiddenField name="idPregunta" value="${idPregunta}" /> 
-            <ul>
+            <ol>
               <g:each in="${respuestas}" status="i" var="respuesta">
                 <li>${respuesta.descripcion} - ${respuesta.respuesta}</li>
               </g:each>
-            </ul>
+            </ol>
             
             <p>${pregunta}</p>
             <p style="text-align: left; padding-left: 150px;">
@@ -33,9 +33,6 @@
           </div>
           <div class="menu_nav">
             <ul style="padding-right: 75px;">
-              <li class="active" id="siguiente_li"><g:link controller="diagnostico" action="index" params="${idPregunta-1}">Anterior</g:link></li>
-              <!-- TODO ver si cambiando el submitButton por un link que use de parametros lo que tiene que pasar aca y que use controller y action los de el boton.
-                   se logra que la UI vuelva a como estaba antes -->
               <li class="active" id="anterior_li"><a href="#"><g:submitButton name="next" value="Siguiente"/></a></li>
             </ul>
           </div>

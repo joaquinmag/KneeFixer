@@ -39,7 +39,7 @@
       </ul>
     </div>
 
-    <div id="ligamento" class="article">
+    <div id="ligamento">
       <h2>Ligamentos</h2>
       <div class="clr"></div>
       <img src="${createLinkTo(dir:'images/dr/', file:'pix1_1.jpg')}" width="170" height="185" alt="" class="fl" />
