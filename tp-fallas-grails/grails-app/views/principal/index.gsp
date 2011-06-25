@@ -19,7 +19,7 @@
       <p>KneeFixer es un sistema experto cuyo objetivo se basa en, dado una serie de síntomas que se presenten en un paciente, determinar el tipo de lesión que este puede tener. Se enfoca en las lesiones que afectan a la rodilla, debido a que el campo de lesiones en todas las partes del cuerpo es muy abarcativo. El experto que respalda este sistema es el traumatólogo especialista en rodilla Jorge Vázquez.</p>
       <p>El trabajo fue realizo por los alumnos de la materia 75.67 Sistemas Automáticos de Diagnóstico y Detección de Fallas I:</p>
       <ul style="padding-left: 55px">
-        <li>Magnares, Joaquín</li>
+        <li>Magneres, Joaquín</li>
         <li>Meller, Gustavo</li>
         <li>Mouso, Nicolás</li>
       </ul>

@@ -1,9 +1,9 @@
 <div class="searchform">
-  <form id="formsearch" name="formsearch" method="post" action="#">
+  <form id="formsearch" name="formsearch" method="get" action="http://www.google.com/search">
     <span>
-    <input name="editbox_search" class="editbox_search" id="editbox_search" maxlength="80" value="Search our ste:" type="text" />
+    <input name="q" class="editbox_search" id="editbox_search" maxlength="80" value="Search on Google:" type="text" />
     </span>
-    <input name="button_search" src="${createLinkTo(dir:'images/dr', file:'search_btn.gif')}" class="button_search" type="image" />
+    <input name="button_search" value="Google Search" src="${createLinkTo(dir:'images/dr', file:'search_btn.gif')}" class="button_search" type="image" />
   </form>
 </div>
 <div class="gadget">
