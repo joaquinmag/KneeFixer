@@ -52,3 +52,4 @@ Posterior: El dolor se produce en la parte posterior.
 Anterior y Posterior: El dolor se produce tanto en la parte anterior como posterior.
 
 Frontal: El dolor se produce en la parte frontal.
+
